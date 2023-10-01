@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignUpActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="120dp"
+            android:layout_marginBottom="30dp"
+            android:src="@drawable/logo" />
+
+        <EditText
+            android:id="@+id/txtFirstName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="15"
+            android:hint="First Name"
+            android:textSize="20dp"
+            android:text="FirstName" />
+
+        <EditText
+            android:id="@+id/txtLastName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="15"
+            android:hint="Last Name"
+            android:textSize="20dp"
+            android:text="LastName" />
+
+
+        <EditText
+            android:id="@+id/txtBirthDay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="15"
+            android:hint="Birthday"
+            android:inputType="date"
+            android:textSize="20dp"
+            android:text="13/09/2001" />
+
+        <EditText
+            android:id="@+id/txtEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="15"
+            android:hint="Email"
+            android:textSize="20dp"
+            android:text="test@gmail.com" />
+
+
+        <EditText
+            android:id="@+id/txtPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:drawableRight="@drawable/baseline_disabled_visible_24"
+            android:ems="15"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:textSize="20dp"
+            android:text="123" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:ems="15"
+            android:hint="12 or more characters"
+            android:drawableLeft="@drawable/baseline_check_circle_24"
+            android:paddingLeft="25dp"
+            android:layout_gravity="left" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:ems="15"
+            android:hint="No leading spaces"
+            android:drawableLeft="@drawable/baseline_check_circle_24"
+            android:paddingLeft="25dp"
+            android:layout_gravity="left" />
+
+        <Button
+            android:id="@+id/signup_button"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="Sign up"
+            android:textColor="@color/black"
+            android:padding="10dp"
+            android:textSize="15sp"/>
+
+<!--        <TextView-->
+<!--            android:layout_width="400dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="100dp"-->
+<!--            android:ems="15"-->
+<!--            android:textAlignment="center"-->
+<!--            android:text="Nếu tiếp tục, bạn đồng ý với Điều khoản Dịch vụ và đã đọc [Chính sách Quyền riêng tư] của chúng tôi (https://www.flickr.com/help/privacy)."-->
+<!--            android:textSize="15dp" />-->
+
+<!--        <Button-->
+<!--            android:layout_width="4000dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:background="@color/teal_200"-->
+<!--            android:text="Đã là thành viên Flickr? Đăng nhập"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="15dp" />-->
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="735dp"
+        android:ems="15"
+        android:textAlignment="center"
+        android:text="By continuing, you to our Terms of Service and have read our Privacy Policy"
+        android:textSize="15dp" />
+
+    <Button
+        android:id="@+id/login_button"
+        android:layout_width="4000dp"
+        android:layout_height="100dp"
+        android:background="@color/teal_200"
+        android:text="Already a Flickr member? Log in"
+        android:textColor="@color/black"
+        android:layout_marginTop="800dp"
+        android:textSize="15dp" />
+
+</RelativeLayout>

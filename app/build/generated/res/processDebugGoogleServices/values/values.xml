@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="firebase_database_url" translatable="false">https://flickrapp-2a58f-default-rtdb.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">201982826856</string>
+    <string name="google_api_key" translatable="false">AIzaSyDGq9DRTaArolO5Vo0eJJJm14QeXzdmzqE</string>
+    <string name="google_app_id" translatable="false">1:201982826856:android:925474e17b36f1e66e9edd</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDGq9DRTaArolO5Vo0eJJJm14QeXzdmzqE</string>
+    <string name="google_storage_bucket" translatable="false">flickrapp-2a58f.appspot.com</string>
+    <string name="project_id" translatable="false">flickrapp-2a58f</string>
+</resources>
