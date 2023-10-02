@@ -2,6 +2,7 @@ package vn.edu.usth.flickrapp.Adapter;
 
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -37,6 +38,7 @@ public class SlideAdapter extends PagerAdapter {
 
         TextView titleTextView = view.findViewById(R.id.textView_Title);
         TextView contentTextView = view.findViewById(R.id.textView_Content);
+        LinearLayout layout = view.findViewById(R.id.layout_slide);
 
         SlideItem slideItem = slideItems.get(position);
         titleTextView.setText(slideItem.getTitle());
