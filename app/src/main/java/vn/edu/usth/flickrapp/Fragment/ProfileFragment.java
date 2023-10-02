@@ -92,6 +92,29 @@ public class ProfileFragment extends Fragment {
             }
         });
 
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference followRef = database.getReference("follow");
+        followRef.orderByChild("followed").equalTo("Follow").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                long countFollow = 0;
+                long countFollowing = 0;
+                for (DataSnapshot userSnapshot : dataSnapshot.getChildren()) {
+                    String email = userSnapshot.child("email").getValue(String.class);
+                    String emailPhu = userSnapshot.child("emailPhu").getValue(String.class);
+                    if(email.equals(user.email)) countFollow++;
+                    if(emailPhu.equals(user.email)) countFollowing++;
+                }
+                TextView txtCoutFollow = v.findViewById(R.id.txtCoutFollow);
+                txtCoutFollow.setText("Theo dõi: " + countFollow + " - Đang theo dõi: "+countFollowing);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                // Xử lý lỗi nếu có
+            }
+        });
+
         TabLayout tabLayout = v.findViewById(R.id.tab_layout);
         new TabLayoutMediator(tabLayout, viewPager,
                 (tab, position) -> {
@@ -144,8 +167,7 @@ public class ProfileFragment extends Fragment {
         }
     }
 
-    public void uploadAvatar(Drawable drawable)
-    {
+    public void uploadAvatar(Drawable drawable) {
         BitmapDrawable bitmapDrawable = (BitmapDrawable) drawable;
 
         ProgressDialog progressDialog = new ProgressDialog(getActivity());

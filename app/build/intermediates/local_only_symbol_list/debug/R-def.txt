@@ -56,6 +56,8 @@ id avatarImageView
 id bottom_navigation
 id btnCamera
 id btnChoose
+id btnClose
+id btnFollow
 id btnShare
 id btnSignOut
 id btnUpload
@@ -79,6 +81,7 @@ id errorMessageLastName
 id errorMessagePass
 id icon_image
 id imageAvatar
+id imageAvatarFollow
 id imageContentImageView
 id imageTabProfile
 id imageView
@@ -124,11 +127,13 @@ id textView_Title
 id timestampTextView
 id txtBirthDay
 id txtContentNews
+id txtCoutFollow
 id txtEmail
 id txtFirstName
 id txtLastName
 id txtLoginEmail
 id txtLoginPassword
+id txtNameFollow
 id txtPassword
 id txtProfile1
 id txtProfile2
@@ -138,6 +143,7 @@ id usernameTextView
 id viewPagerHome
 id view_pager
 id view_pagerProfile
+layout activity_follower
 layout activity_main
 layout activity_news
 layout activity_photo_detail

@@ -24,12 +24,12 @@
         "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\layout\\fragment_cam.xml"
     },
     {
-        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-mergeDebugResources-50:\\layout\\login_activity.xml",
-        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\layout\\login_activity.xml"
-    },
-    {
         "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-mergeDebugResources-50:\\layout\\fragment_albums.xml",
         "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\layout\\fragment_albums.xml"
+    },
+    {
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-mergeDebugResources-50:\\layout\\login_activity.xml",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\layout\\login_activity.xml"
     },
     {
         "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-mergeDebugResources-50:\\layout\\profile.xml",
@@ -82,6 +82,10 @@
     {
         "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-mergeDebugResources-50:\\layout\\layout_list_item.xml",
         "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\layout\\layout_list_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-mergeDebugResources-50:\\layout\\activity_follower.xml",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\layout\\activity_follower.xml"
     },
     {
         "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-mergeDebugResources-50:\\layout\\fragment_groups.xml",

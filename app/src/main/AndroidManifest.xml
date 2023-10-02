@@ -13,14 +13,17 @@
         android:theme="@style/Theme.FlickrApp"
         tools:targetApi="31">
         <activity
+            android:name=".FollowerActivity"
+            android:exported="false" />
+        <activity
             android:name=".PhotoDetailActivity"
             android:exported="false" />
         <activity
             android:name=".NewsActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".LoginActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".WelcomeActivity"
             android:exported="true">
@@ -32,19 +35,19 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".SearchActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".TabLayoutActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".SignUpActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".Adapter.ViewPager_Profile_Adapter"
-            android:exported="true"></activity>
+            android:exported="true" />
     </application>
 
 </manifest>

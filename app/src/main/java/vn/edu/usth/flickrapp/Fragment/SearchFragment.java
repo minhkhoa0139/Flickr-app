@@ -24,6 +24,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
+import vn.edu.usth.flickrapp.Adapter.HistoryAdapter;
 import vn.edu.usth.flickrapp.Adapter.ImageProfileAdapter;
 import vn.edu.usth.flickrapp.Model.Image;
 import vn.edu.usth.flickrapp.Model.User;
@@ -38,6 +39,15 @@ public class SearchFragment extends Fragment {
         RecyclerView recyclerView = v.findViewById(R.id.recyclerViewSearch);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         List<Image> imgLst = new ArrayList<>();
+
+        RecyclerView recyclerViewHistory = v.findViewById(R.id.recyclerViewHistory);
+        recyclerViewHistory.setLayoutManager(new LinearLayoutManager(getContext()));
+        List<String> lstHistory = new ArrayList<>();
+        lstHistory.add("Home");
+        lstHistory.add("Home2");
+        lstHistory.add("Home3");
+        HistoryAdapter adapterHistory = new HistoryAdapter(lstHistory);
+        recyclerViewHistory.setAdapter(adapterHistory);
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference imagesRef = database.getReference("images_url");
@@ -69,7 +79,8 @@ public class SearchFragment extends Fragment {
         txtSearch.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                // Thực hiện các hành động trước khi văn bản thay đổi
+                recyclerViewHistory.setVisibility(View.VISIBLE);
+                recyclerView.setVisibility(View.GONE);
             }
 
             @Override
@@ -102,6 +113,8 @@ public class SearchFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable editable) {
+                recyclerViewHistory.setVisibility(View.GONE);
+                recyclerView.setVisibility(View.VISIBLE);
             }
         });
 

@@ -105,5 +105,16 @@
         android:gravity="center"
         android:textStyle="bold"/>
 
+    <TextView
+        android:textColor="@color/black"
+        android:layout_marginTop="170dp"
+        android:id="@+id/txtCoutFollow"
+        android:textSize="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:gravity="center"
+        android:textStyle="bold"/>
+
 
 </RelativeLayout>

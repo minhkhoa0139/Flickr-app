@@ -33,6 +33,9 @@
         android:testOnly="true"
         android:theme="@style/Theme.FlickrApp" >
         <activity
+            android:name="vn.edu.usth.flickrapp.FollowerActivity"
+            android:exported="false" />
+        <activity
             android:name="vn.edu.usth.flickrapp.PhotoDetailActivity"
             android:exported="false" />
         <activity

@@ -1,12 +1,16 @@
 package vn.edu.usth.flickrapp.Adapter;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,6 +29,8 @@ import org.w3c.dom.Text;
 
 import java.util.List;
 
+import vn.edu.usth.flickrapp.FollowerActivity;
+import vn.edu.usth.flickrapp.Model.Follow;
 import vn.edu.usth.flickrapp.Model.Image;
 import vn.edu.usth.flickrapp.Model.Notification;
 import vn.edu.usth.flickrapp.Model.Reaction;
@@ -36,7 +42,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
 
     private Context context;
     private List<Image> imagelst;
-
+    Dialog dialog;
     private User user;
 
     public ImageAdapter(Context context, List<Image> imagelst, User user) {
@@ -65,20 +71,86 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
         DatabaseReference notificationRef = database.getReference("notification");
         DatabaseReference commentRef = database.getReference("comment");
         DatabaseReference usersRef = database.getReference("users");
+        DatabaseReference followRef = database.getReference("follow");
 
-        usersRef.orderByChild("email").equalTo(obj.getEmailPhu()).addListenerForSingleValueEvent(new ValueEventListener() {
+        usersRef.orderByChild("email").equalTo(obj.getEmail()).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
                     for (DataSnapshot userSnapshot : dataSnapshot.getChildren()) {
                         String avatar = getValue("avatar", userSnapshot);
                         if(!TextUtils.isEmpty(avatar)) Glide.with(context).load(avatar).into(holder.avatarImageView);
+
+                        dialog = new Dialog(context);
+                        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                        dialog.setContentView(R.layout.activity_follower);
+
+                        ImageView imageAvatarFollow = dialog.findViewById(R.id.imageAvatarFollow);
+                        TextView txtNameFollow = dialog.findViewById(R.id.txtNameFollow);
+
+                        if(!TextUtils.isEmpty(avatar)) Glide.with(context).load(avatar).into(imageAvatarFollow);
+                        txtNameFollow.setText(getValue("firstName", userSnapshot) + " " + getValue("lastName", userSnapshot));
+
+                        Button btnClose = dialog.findViewById(R.id.btnClose);
+                        Button btnFollow = dialog.findViewById(R.id.btnFollow);
+
+                        if(obj.getEmail().equals(user.email)) btnFollow.setVisibility(View.GONE);
+
+                        btnClose.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                dialog.dismiss();
+                            }
+                        });
+
+                        followRef.orderByChild("email").equalTo(obj.getEmail()).addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                for (DataSnapshot userSnapshot : dataSnapshot.getChildren()) {
+                                    String emailPhu = userSnapshot.child("emailPhu").getValue(String.class);
+                                    String txt_followed = userSnapshot.child("followed").getValue(String.class);
+
+                                    if (emailPhu != null && emailPhu.equals(user.email) && txt_followed.equals("Follow")) {
+                                        btnFollow.setText("UnFollow");
+                                        btnFollow.setBackgroundColor(Color.parseColor("#0000FF"));
+                                    }
+                                }
+                            }
+
+                            @Override
+                            public void onCancelled(DatabaseError databaseError) {
+                            }
+                        });
+
+                        btnFollow.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                String followed = btnFollow.getText().toString();
+                                if(followed.equals("Follow")){
+                                    btnFollow.setText("Unfollow");
+                                    Follow follow = new Follow(obj.getEmail(), user.email,"Follow");
+                                    SaveFollow(follow);
+                                }
+                                else {
+                                    btnFollow.setText("Follow");
+                                    Follow follow = new Follow(obj.getEmail(), user.email,"Unfollow");
+                                    SaveFollow(follow);
+                                }
+                            }
+                        });
                     }
                 }
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
+            }
+        });
+
+        holder.avatarImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.show();
             }
         });
 
@@ -225,6 +297,37 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
                 } else {
                     DatabaseReference userRef = reactionRef.child(userKey);
                     userRef.child("liked").setValue(reaction.GetLiked());
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                // Xử lý lỗi nếu có
+            }
+        });
+    }
+
+    public void SaveFollow(Follow follow) {
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference followRef = database.getReference("follow");
+
+        followRef.orderByChild("email").equalTo(follow.getEmail()).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String userKey = "";
+                for (DataSnapshot userSnapshot : dataSnapshot.getChildren()) {
+                    String emailPhu = userSnapshot.child("emailPhu").getValue(String.class);
+                    if (emailPhu != null && emailPhu.equals(user.email)) {
+                        userKey = userSnapshot.getKey();
+                        break;
+                    }
+                }
+
+                if (TextUtils.isEmpty(userKey)) {
+                    followRef.push().setValue(follow);
+                } else {
+                    DatabaseReference fRef = followRef.child(userKey);
+                    fRef.child("followed").setValue(follow.getFollowed());
                 }
             }
 

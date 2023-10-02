@@ -13,14 +13,11 @@ import java.util.List;
 import vn.edu.usth.flickrapp.R;
 
 public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.ViewHolder> {
-    private List<String> dataList; // Dữ liệu hiển thị trong RecyclerView
-
-    // Constructor để truyền dữ liệu vào Adapter
+    private List<String> dataList;
     public HistoryAdapter(List<String> dataList) {
         this.dataList = dataList;
     }
 
-    // Được gọi khi RecyclerView cần tạo ViewHolder mới
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -40,7 +37,6 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.ViewHold
         return dataList.size();
     }
 
-    // Lớp ViewHolder để tham chiếu đến các phần tử giao diện trong mỗi mục
     public class ViewHolder extends RecyclerView.ViewHolder {
         public TextView textView;
 

@@ -3252,6 +3252,8 @@ id bounceEnd
 id bounceStart
 id btnCamera
 id btnChoose
+id btnClose
+id btnFollow
 id btnShare
 id btnSignOut
 id btnUpload
@@ -3399,6 +3401,7 @@ id ignore
 id ignoreRequest
 id image
 id imageAvatar
+id imageAvatarFollow
 id imageContentImageView
 id imageTabProfile
 id imageView
@@ -3707,11 +3710,13 @@ id transition_transform
 id triangle
 id txtBirthDay
 id txtContentNews
+id txtCoutFollow
 id txtEmail
 id txtFirstName
 id txtLastName
 id txtLoginEmail
 id txtLoginPassword
+id txtNameFollow
 id txtPassword
 id txtProfile1
 id txtProfile2
@@ -3860,6 +3865,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_follower
 layout activity_main
 layout activity_news
 layout activity_photo_detail

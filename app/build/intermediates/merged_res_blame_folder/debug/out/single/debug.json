@@ -196,6 +196,10 @@
         "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\drawable\\ic_autouploadr.png"
     },
     {
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\layout_activity_follower.xml.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\layout\\activity_follower.xml"
+    },
+    {
         "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
         "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
@@ -244,12 +248,12 @@
         "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\menu\\menu_bottom_navigation.xml"
     },
     {
-        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\drawable_circle_background.xml.flat",
-        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\drawable\\circle_background.xml"
-    },
-    {
         "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\mipmap-mdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\mipmap-mdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\drawable_circle_background.xml.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\drawable\\circle_background.xml"
     },
     {
         "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
