@@ -84,6 +84,7 @@ id imageView
 id imageView4
 id imageViewDetail
 id layout_notification
+id layout_slide
 id likeCountDetailTextView
 id likeCountTextView
 id likeImageView

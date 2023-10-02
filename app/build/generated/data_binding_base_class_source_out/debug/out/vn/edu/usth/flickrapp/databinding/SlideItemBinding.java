@@ -20,14 +20,18 @@ public final class SlideItemBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
+  public final LinearLayout layoutSlide;
+
+  @NonNull
   public final TextView textViewContent;
 
   @NonNull
   public final TextView textViewTitle;
 
-  private SlideItemBinding(@NonNull LinearLayout rootView, @NonNull TextView textViewContent,
-      @NonNull TextView textViewTitle) {
+  private SlideItemBinding(@NonNull LinearLayout rootView, @NonNull LinearLayout layoutSlide,
+      @NonNull TextView textViewContent, @NonNull TextView textViewTitle) {
     this.rootView = rootView;
+    this.layoutSlide = layoutSlide;
     this.textViewContent = textViewContent;
     this.textViewTitle = textViewTitle;
   }
@@ -59,6 +63,8 @@ public final class SlideItemBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      LinearLayout layoutSlide = (LinearLayout) rootView;
+
       id = R.id.textView_Content;
       TextView textViewContent = ViewBindings.findChildViewById(rootView, id);
       if (textViewContent == null) {
@@ -71,7 +77,8 @@ public final class SlideItemBinding implements ViewBinding {
         break missingId;
       }
 
-      return new SlideItemBinding((LinearLayout) rootView, textViewContent, textViewTitle);
+      return new SlideItemBinding((LinearLayout) rootView, layoutSlide, textViewContent,
+          textViewTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
