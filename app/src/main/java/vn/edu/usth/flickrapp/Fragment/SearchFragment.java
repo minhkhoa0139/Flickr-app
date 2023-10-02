@@ -103,6 +103,7 @@ public class SearchFragment extends Fragment {
                 if (hasFocus) {
                     recyclerViewHistory.setVisibility(View.VISIBLE);
                     recyclerView.setVisibility(View.GONE);
+                    ReloadHistory();
                 } else {
                     recyclerViewHistory.setVisibility(View.GONE);
                     recyclerView.setVisibility(View.VISIBLE);
@@ -175,6 +176,7 @@ public class SearchFragment extends Fragment {
                         String content = getValue("content", userSnapshot);
                         lstHistory.add(content);
                     }
+                    recyclerViewHistory.setLayoutManager(new LinearLayoutManager(getContext()));
                     HistoryAdapter adapterHistory = new HistoryAdapter(lstHistory, txtSearch, user);
                     recyclerViewHistory.setAdapter(adapterHistory);
                 }
