@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -34,16 +35,20 @@ public final class FragmentCamBinding implements ViewBinding {
   public final Button btnUpload;
 
   @NonNull
+  public final CheckBox checkboxType;
+
+  @NonNull
   public final ImageView imageView;
 
   private FragmentCamBinding(@NonNull LinearLayout rootView, @NonNull EditText ContentImage,
       @NonNull Button btnCamera, @NonNull Button btnChoose, @NonNull Button btnUpload,
-      @NonNull ImageView imageView) {
+      @NonNull CheckBox checkboxType, @NonNull ImageView imageView) {
     this.rootView = rootView;
     this.ContentImage = ContentImage;
     this.btnCamera = btnCamera;
     this.btnChoose = btnChoose;
     this.btnUpload = btnUpload;
+    this.checkboxType = checkboxType;
     this.imageView = imageView;
   }
 
@@ -98,6 +103,12 @@ public final class FragmentCamBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.checkboxType;
+      CheckBox checkboxType = ViewBindings.findChildViewById(rootView, id);
+      if (checkboxType == null) {
+        break missingId;
+      }
+
       id = R.id.imageView;
       ImageView imageView = ViewBindings.findChildViewById(rootView, id);
       if (imageView == null) {
@@ -105,7 +116,7 @@ public final class FragmentCamBinding implements ViewBinding {
       }
 
       return new FragmentCamBinding((LinearLayout) rootView, ContentImage, btnCamera, btnChoose,
-          btnUpload, imageView);
+          btnUpload, checkboxType, imageView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

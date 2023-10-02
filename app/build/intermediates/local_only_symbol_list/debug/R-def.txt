@@ -55,12 +55,12 @@ id avatarImageView
 id bottom_navigation
 id btnCamera
 id btnChoose
+id btnSignOut
 id btnUpload
 id button4
 id button5
 id button6
-id button7
-id button8
+id checkboxType
 id commentCountDetailTextView
 id commentCountTextView
 id commentEditText
@@ -69,8 +69,6 @@ id commentImageViewDetail
 id commentTextView
 id commentsRecyclerView
 id editText
-id emailPhuTextView
-id emailTextView
 id errorMessage
 id errorMessageBirthday
 id errorMessageEmail
@@ -78,6 +76,7 @@ id errorMessageFirstName
 id errorMessageLastName
 id errorMessagePass
 id icon_image
+id imageAvatar
 id imageContentImageView
 id imageTabProfile
 id imageView
@@ -106,6 +105,7 @@ id navigation_notifications
 id notificationText
 id otherImageView
 id recyclerView
+id recyclerViewAlbum
 id recyclerViewNotifications
 id recyclerViewProfile
 id recyclerViewSearch
@@ -130,7 +130,6 @@ id txtPassword
 id txtProfile1
 id txtProfile2
 id txtSearch
-id uriTextView
 id usernameTextView
 id viewPagerHome
 id view_pager

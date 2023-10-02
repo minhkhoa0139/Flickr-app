@@ -30,12 +30,6 @@ public final class LayoutListItemBinding implements ViewBinding {
   public final ImageView commentImageView;
 
   @NonNull
-  public final TextView emailPhuTextView;
-
-  @NonNull
-  public final TextView emailTextView;
-
-  @NonNull
   public final ImageView imageContentImageView;
 
   @NonNull
@@ -48,28 +42,21 @@ public final class LayoutListItemBinding implements ViewBinding {
   public final TextView txtContentNews;
 
   @NonNull
-  public final TextView uriTextView;
-
-  @NonNull
   public final TextView usernameTextView;
 
   private LayoutListItemBinding(@NonNull LinearLayout rootView, @NonNull ImageView avatarImageView,
       @NonNull TextView commentCountTextView, @NonNull ImageView commentImageView,
-      @NonNull TextView emailPhuTextView, @NonNull TextView emailTextView,
       @NonNull ImageView imageContentImageView, @NonNull TextView likeCountTextView,
       @NonNull ImageView likeImageView, @NonNull TextView txtContentNews,
-      @NonNull TextView uriTextView, @NonNull TextView usernameTextView) {
+      @NonNull TextView usernameTextView) {
     this.rootView = rootView;
     this.avatarImageView = avatarImageView;
     this.commentCountTextView = commentCountTextView;
     this.commentImageView = commentImageView;
-    this.emailPhuTextView = emailPhuTextView;
-    this.emailTextView = emailTextView;
     this.imageContentImageView = imageContentImageView;
     this.likeCountTextView = likeCountTextView;
     this.likeImageView = likeImageView;
     this.txtContentNews = txtContentNews;
-    this.uriTextView = uriTextView;
     this.usernameTextView = usernameTextView;
   }
 
@@ -118,18 +105,6 @@ public final class LayoutListItemBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.emailPhuTextView;
-      TextView emailPhuTextView = ViewBindings.findChildViewById(rootView, id);
-      if (emailPhuTextView == null) {
-        break missingId;
-      }
-
-      id = R.id.emailTextView;
-      TextView emailTextView = ViewBindings.findChildViewById(rootView, id);
-      if (emailTextView == null) {
-        break missingId;
-      }
-
       id = R.id.imageContentImageView;
       ImageView imageContentImageView = ViewBindings.findChildViewById(rootView, id);
       if (imageContentImageView == null) {
@@ -154,12 +129,6 @@ public final class LayoutListItemBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.uriTextView;
-      TextView uriTextView = ViewBindings.findChildViewById(rootView, id);
-      if (uriTextView == null) {
-        break missingId;
-      }
-
       id = R.id.usernameTextView;
       TextView usernameTextView = ViewBindings.findChildViewById(rootView, id);
       if (usernameTextView == null) {
@@ -167,9 +136,8 @@ public final class LayoutListItemBinding implements ViewBinding {
       }
 
       return new LayoutListItemBinding((LinearLayout) rootView, avatarImageView,
-          commentCountTextView, commentImageView, emailPhuTextView, emailTextView,
-          imageContentImageView, likeCountTextView, likeImageView, txtContentNews, uriTextView,
-          usernameTextView);
+          commentCountTextView, commentImageView, imageContentImageView, likeCountTextView,
+          likeImageView, txtContentNews, usernameTextView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

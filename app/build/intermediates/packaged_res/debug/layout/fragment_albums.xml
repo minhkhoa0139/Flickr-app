@@ -6,5 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".Fragment.AlbumsFragment">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewAlbum"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 </FrameLayout>

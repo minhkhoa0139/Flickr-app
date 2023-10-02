@@ -3239,12 +3239,11 @@ id bounceEnd
 id bounceStart
 id btnCamera
 id btnChoose
+id btnSignOut
 id btnUpload
 id button4
 id button5
 id button6
-id button7
-id button8
 id buttonPanel
 id cache_measures
 id callMeasure
@@ -3259,6 +3258,7 @@ id chain
 id chain2
 id chains
 id checkbox
+id checkboxType
 id checked
 id chronometer
 id circle_center
@@ -3329,8 +3329,6 @@ id edge
 id editText
 id edit_query
 id elastic
-id emailPhuTextView
-id emailTextView
 id embed
 id end
 id endToStart
@@ -3385,6 +3383,7 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+id imageAvatar
 id imageContentImageView
 id imageTabProfile
 id imageView
@@ -3542,6 +3541,7 @@ id radio
 id ratio
 id rectangles
 id recyclerView
+id recyclerViewAlbum
 id recyclerViewNotifications
 id recyclerViewProfile
 id recyclerViewSearch
@@ -3702,7 +3702,6 @@ id unchecked
 id uniform
 id unlabeled
 id up
-id uriTextView
 id useLogo
 id usernameTextView
 id vertical_only

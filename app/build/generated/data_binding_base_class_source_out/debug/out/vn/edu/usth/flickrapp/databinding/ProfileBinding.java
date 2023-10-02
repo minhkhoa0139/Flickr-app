@@ -4,7 +4,6 @@ package vn.edu.usth.flickrapp.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -24,16 +23,16 @@ public final class ProfileBinding implements ViewBinding {
   private final RelativeLayout rootView;
 
   @NonNull
+  public final ImageView btnSignOut;
+
+  @NonNull
   public final ImageView button4;
 
   @NonNull
   public final ImageView button6;
 
   @NonNull
-  public final ImageView button7;
-
-  @NonNull
-  public final Button button8;
+  public final ImageView imageAvatar;
 
   @NonNull
   public final ImageView imageView4;
@@ -47,15 +46,15 @@ public final class ProfileBinding implements ViewBinding {
   @NonNull
   public final ViewPager2 viewPagerProfile;
 
-  private ProfileBinding(@NonNull RelativeLayout rootView, @NonNull ImageView button4,
-      @NonNull ImageView button6, @NonNull ImageView button7, @NonNull Button button8,
+  private ProfileBinding(@NonNull RelativeLayout rootView, @NonNull ImageView btnSignOut,
+      @NonNull ImageView button4, @NonNull ImageView button6, @NonNull ImageView imageAvatar,
       @NonNull ImageView imageView4, @NonNull TabLayout tabLayout,
       @NonNull TextView textNameProfile, @NonNull ViewPager2 viewPagerProfile) {
     this.rootView = rootView;
+    this.btnSignOut = btnSignOut;
     this.button4 = button4;
     this.button6 = button6;
-    this.button7 = button7;
-    this.button8 = button8;
+    this.imageAvatar = imageAvatar;
     this.imageView4 = imageView4;
     this.tabLayout = tabLayout;
     this.textNameProfile = textNameProfile;
@@ -89,6 +88,12 @@ public final class ProfileBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.btnSignOut;
+      ImageView btnSignOut = ViewBindings.findChildViewById(rootView, id);
+      if (btnSignOut == null) {
+        break missingId;
+      }
+
       id = R.id.button4;
       ImageView button4 = ViewBindings.findChildViewById(rootView, id);
       if (button4 == null) {
@@ -101,15 +106,9 @@ public final class ProfileBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.button7;
-      ImageView button7 = ViewBindings.findChildViewById(rootView, id);
-      if (button7 == null) {
-        break missingId;
-      }
-
-      id = R.id.button8;
-      Button button8 = ViewBindings.findChildViewById(rootView, id);
-      if (button8 == null) {
+      id = R.id.imageAvatar;
+      ImageView imageAvatar = ViewBindings.findChildViewById(rootView, id);
+      if (imageAvatar == null) {
         break missingId;
       }
 
@@ -137,8 +136,8 @@ public final class ProfileBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ProfileBinding((RelativeLayout) rootView, button4, button6, button7, button8,
-          imageView4, tabLayout, textNameProfile, viewPagerProfile);
+      return new ProfileBinding((RelativeLayout) rootView, btnSignOut, button4, button6,
+          imageAvatar, imageView4, tabLayout, textNameProfile, viewPagerProfile);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
