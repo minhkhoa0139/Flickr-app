@@ -108,18 +108,20 @@ public class SignUpActivity extends AppCompatActivity {
                 }
                 else errorMessagePassword.setVisibility(View.GONE);
 
-                progressDialog.show();
                 usersRef.orderByChild("email").equalTo(email).addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
-                        progressDialog.dismiss();
+                        progressDialog.show();
                         if (dataSnapshot.exists()) {
+                            progressDialog.dismiss();
                             Toast.makeText(getApplicationContext(), "Email đã tồn tại", Toast.LENGTH_SHORT).show();
-                        } else {
+                        }
+                        else {
                             usersRef.child(email.replace(".", ",")).setValue(user)
                                     .addOnSuccessListener(new OnSuccessListener<Void>() {
                                         @Override
                                         public void onSuccess(Void aVoid) {
+                                            progressDialog.dismiss();
                                             Toast.makeText(getApplicationContext(), "Đăng ký thành công", Toast.LENGTH_SHORT).show();
 
                                             AlertDialog.Builder builder = new AlertDialog.Builder(SignUpActivity.this);
@@ -146,6 +148,7 @@ public class SignUpActivity extends AppCompatActivity {
                                     .addOnFailureListener(new OnFailureListener() {
                                         @Override
                                         public void onFailure(@NonNull Exception e) {
+                                            progressDialog.dismiss();
                                             Toast.makeText(getApplicationContext(), "Đăng ký thất bại", Toast.LENGTH_SHORT).show();
                                         }
                                     });
