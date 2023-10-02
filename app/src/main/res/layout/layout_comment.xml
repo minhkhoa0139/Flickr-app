@@ -5,12 +5,15 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-    <ImageView
+    <com.makeramen.roundedimageview.RoundedImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/avatarImageView"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:src="@drawable/ic_ava"
-    android:scaleType="centerCrop" />
+        android:background="@drawable/circle_background"
+        android:scaleType="fitCenter"
+        app:riv_corner_radius="100dip"
+        app:riv_tile_mode="repeat"
+        android:layout_width="50dp"
+        android:layout_height="50dp"/>
 
     <TextView
         android:id="@+id/nameTextView"

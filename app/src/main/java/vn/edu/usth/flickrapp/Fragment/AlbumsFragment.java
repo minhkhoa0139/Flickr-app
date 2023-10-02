@@ -108,8 +108,6 @@ public class AlbumsFragment extends Fragment {
                             public void onDataChange(DataSnapshot dataSnapshot) {
                                 for (DataSnapshot userSnapshot : dataSnapshot.getChildren()) {
                                     String email = userSnapshot.child("email").getValue(String.class);
-                                    String txt_liked = userSnapshot.child("liked").getValue(String.class);
-                                    Toast.makeText(getActivity(), txt_liked, Toast.LENGTH_SHORT).show();
                                     if (email != null && email.equals(user.email)) {
                                         imgLst.add(new Image(user.email, uri, likeCount, commentCount, content, "", email, type));
                                         ImageProfileAdapter adapter = new ImageProfileAdapter(getContext(), imgLst, user);

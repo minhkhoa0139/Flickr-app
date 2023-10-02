@@ -27,6 +27,7 @@ drawable baseline_person_outline_24
 drawable baseline_search_24
 drawable bg
 drawable border
+drawable circle_background
 drawable ic_autouploadr
 drawable ic_ava
 drawable ic_camera
@@ -55,6 +56,7 @@ id avatarImageView
 id bottom_navigation
 id btnCamera
 id btnChoose
+id btnShare
 id btnSignOut
 id btnUpload
 id button4
@@ -106,6 +108,7 @@ id notificationText
 id otherImageView
 id recyclerView
 id recyclerViewAlbum
+id recyclerViewHistory
 id recyclerViewNotifications
 id recyclerViewProfile
 id recyclerViewSearch
@@ -130,6 +133,7 @@ id txtPassword
 id txtProfile1
 id txtProfile2
 id txtSearch
+id txt_history
 id usernameTextView
 id viewPagerHome
 id view_pager
@@ -146,6 +150,7 @@ layout fragment_notification
 layout fragment_public
 layout fragment_stats
 layout layout_comment
+layout layout_history
 layout layout_image_profile
 layout layout_list_item
 layout layout_notifications

@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -55,7 +56,6 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
     public void onBindViewHolder(@NonNull ImageViewHolder holder, int position) {
         Image obj = imagelst.get(position);
         Glide.with(context).load(obj.getUri()).into(holder.imageView);
-        if(!TextUtils.isEmpty(user.avatar)) Glide.with(context).load(user.avatar).into(holder.avatarImageView);
 
         holder.usernameTextView.setText(obj.getName());
         holder.txtContentNews.setText(obj.getContent());
@@ -64,6 +64,23 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
         DatabaseReference reactionRef = database.getReference("reaction");
         DatabaseReference notificationRef = database.getReference("notification");
         DatabaseReference commentRef = database.getReference("comment");
+        DatabaseReference usersRef = database.getReference("users");
+
+        usersRef.orderByChild("email").equalTo(obj.getEmailPhu()).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    for (DataSnapshot userSnapshot : dataSnapshot.getChildren()) {
+                        String avatar = getValue("avatar", userSnapshot);
+                        if(!TextUtils.isEmpty(avatar)) Glide.with(context).load(avatar).into(holder.avatarImageView);
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
 
         reactionRef.orderByChild("uri").equalTo(obj.getUri()).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -139,6 +156,22 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
                 }
             }
         });
+
+        holder.btnShare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent shareIntent = new Intent(Intent.ACTION_SEND);
+                shareIntent.setType("text/plain");
+                shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Chia sẻ tiêu đề (nếu cần)");
+                shareIntent.putExtra(Intent.EXTRA_TEXT, "Nội dung bạn muốn chia sẻ");
+
+                if (shareIntent.resolveActivity(context.getPackageManager()) != null) {
+                    context.startActivity(Intent.createChooser(shareIntent, "Chọn ứng dụng chia sẻ"));
+                } else {
+                    Toast.makeText(context, "Không tìm thấy ứng dụng chia sẻ", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 
     @Override
@@ -150,6 +183,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
         ImageView imageView;
         ImageView avatarImageView;
         ImageView likeImageView;
+        ImageView btnShare;
         TextView usernameTextView;
         TextView txtContentNews;
         TextView likeCountTextView;
@@ -165,6 +199,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
             likeCountTextView = itemView.findViewById(R.id.likeCountTextView);
             commentCountTextView = itemView.findViewById(R.id.commentCountTextView);
             likeImageView = itemView.findViewById(R.id.likeImageView);
+            btnShare = itemView.findViewById(R.id.btnShare);
         }
     }
 
@@ -198,5 +233,10 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
                 // Xử lý lỗi nếu có
             }
         });
+    }
+
+    public String getValue(String path, DataSnapshot userSnapshot)
+    {
+        return userSnapshot.child(path).getValue(String.class);
     }
 }

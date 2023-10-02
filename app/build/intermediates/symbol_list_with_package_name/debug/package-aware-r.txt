@@ -1027,6 +1027,18 @@ attr removeEmbeddedFabElevation
 attr restoreState
 attr reverseLayout
 attr rippleColor
+attr riv_border_color
+attr riv_border_width
+attr riv_corner_radius
+attr riv_corner_radius_bottom_left
+attr riv_corner_radius_bottom_right
+attr riv_corner_radius_top_left
+attr riv_corner_radius_top_right
+attr riv_mutate_background
+attr riv_oval
+attr riv_tile_mode
+attr riv_tile_mode_x
+attr riv_tile_mode_y
 attr rotationCenterId
 attr round
 attr roundPercent
@@ -2998,6 +3010,7 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable circle_background
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
 drawable common_google_signin_btn_icon_dark_focused
@@ -3239,6 +3252,7 @@ id bounceEnd
 id bounceStart
 id btnCamera
 id btnChoose
+id btnShare
 id btnSignOut
 id btnUpload
 id button4
@@ -3262,6 +3276,7 @@ id checkboxType
 id checked
 id chronometer
 id circle_center
+id clamp
 id clear_text
 id clip_horizontal
 id clip_vertical
@@ -3455,6 +3470,7 @@ id menu_search
 id message
 id middle
 id mini
+id mirror
 id mobile_navigation
 id mobile_navigation2
 id month_grid
@@ -3542,10 +3558,12 @@ id ratio
 id rectangles
 id recyclerView
 id recyclerViewAlbum
+id recyclerViewHistory
 id recyclerViewNotifications
 id recyclerViewProfile
 id recyclerViewSearch
 id register
+id repeat
 id report_drawn
 id reverseSawtooth
 id right
@@ -3698,6 +3716,7 @@ id txtPassword
 id txtProfile1
 id txtProfile2
 id txtSearch
+id txt_history
 id unchecked
 id uniform
 id unlabeled
@@ -3869,6 +3888,7 @@ layout fragment_notification
 layout fragment_public
 layout fragment_stats
 layout layout_comment
+layout layout_history
 layout layout_image_profile
 layout layout_list_item
 layout layout_notifications
@@ -4004,6 +4024,7 @@ string common_google_play_services_wear_update_text
 string common_open_on_phone
 string common_signin_button_text
 string common_signin_button_text_long
+string define_roundedimageview
 string dest_title
 string error_a11y_label
 string error_icon_content_description
@@ -4020,6 +4041,15 @@ string hello_blank_fragment
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
 string item_view_role_description
+string library_roundedimageview_author
+string library_roundedimageview_authorWebsite
+string library_roundedimageview_isOpenSource
+string library_roundedimageview_libraryDescription
+string library_roundedimageview_libraryName
+string library_roundedimageview_libraryVersion
+string library_roundedimageview_libraryWebsite
+string library_roundedimageview_licenseId
+string library_roundedimageview_repositoryLink
 string m3_ref_typeface_brand_medium
 string m3_ref_typeface_brand_regular
 string m3_ref_typeface_plain_medium
@@ -5373,6 +5403,7 @@ styleable RadialViewGroup materialCircleRadius
 styleable RangeSlider minSeparation values
 styleable RecycleListView paddingBottomNoButtons paddingTopNoTitle
 styleable RecyclerView android_orientation android_clipToPadding android_descendantFocusability fastScrollEnabled fastScrollHorizontalThumbDrawable fastScrollHorizontalTrackDrawable fastScrollVerticalThumbDrawable fastScrollVerticalTrackDrawable layoutManager reverseLayout spanCount stackFromEnd
+styleable RoundedImageView android_scaleType riv_border_color riv_border_width riv_corner_radius riv_corner_radius_bottom_left riv_corner_radius_bottom_right riv_corner_radius_top_left riv_corner_radius_top_right riv_mutate_background riv_oval riv_tile_mode riv_tile_mode_x riv_tile_mode_y
 styleable ScrimInsetsFrameLayout insetForeground
 styleable ScrollingViewBehavior_Layout behavior_overlapTop
 styleable SearchBar android_textAppearance android_text android_hint defaultMarginsEnabled defaultScrollFlagsEnabled elevation forceDefaultNavigationOnClickListener hideNavigationIcon navigationIconTint strokeColor strokeWidth tintNavigationIcon

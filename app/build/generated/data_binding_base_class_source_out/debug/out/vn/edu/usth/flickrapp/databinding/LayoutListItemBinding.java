@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.makeramen.roundedimageview.RoundedImageView;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -21,7 +22,10 @@ public final class LayoutListItemBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
-  public final ImageView avatarImageView;
+  public final RoundedImageView avatarImageView;
+
+  @NonNull
+  public final ImageView btnShare;
 
   @NonNull
   public final TextView commentCountTextView;
@@ -44,13 +48,15 @@ public final class LayoutListItemBinding implements ViewBinding {
   @NonNull
   public final TextView usernameTextView;
 
-  private LayoutListItemBinding(@NonNull LinearLayout rootView, @NonNull ImageView avatarImageView,
+  private LayoutListItemBinding(@NonNull LinearLayout rootView,
+      @NonNull RoundedImageView avatarImageView, @NonNull ImageView btnShare,
       @NonNull TextView commentCountTextView, @NonNull ImageView commentImageView,
       @NonNull ImageView imageContentImageView, @NonNull TextView likeCountTextView,
       @NonNull ImageView likeImageView, @NonNull TextView txtContentNews,
       @NonNull TextView usernameTextView) {
     this.rootView = rootView;
     this.avatarImageView = avatarImageView;
+    this.btnShare = btnShare;
     this.commentCountTextView = commentCountTextView;
     this.commentImageView = commentImageView;
     this.imageContentImageView = imageContentImageView;
@@ -88,8 +94,14 @@ public final class LayoutListItemBinding implements ViewBinding {
     int id;
     missingId: {
       id = R.id.avatarImageView;
-      ImageView avatarImageView = ViewBindings.findChildViewById(rootView, id);
+      RoundedImageView avatarImageView = ViewBindings.findChildViewById(rootView, id);
       if (avatarImageView == null) {
+        break missingId;
+      }
+
+      id = R.id.btnShare;
+      ImageView btnShare = ViewBindings.findChildViewById(rootView, id);
+      if (btnShare == null) {
         break missingId;
       }
 
@@ -135,7 +147,7 @@ public final class LayoutListItemBinding implements ViewBinding {
         break missingId;
       }
 
-      return new LayoutListItemBinding((LinearLayout) rootView, avatarImageView,
+      return new LayoutListItemBinding((LinearLayout) rootView, avatarImageView, btnShare,
           commentCountTextView, commentImageView, imageContentImageView, likeCountTextView,
           likeImageView, txtContentNews, usernameTextView);
     }

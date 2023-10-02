@@ -11,6 +11,7 @@ import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.makeramen.roundedimageview.RoundedImageView;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -21,7 +22,7 @@ public final class LayoutNotificationsBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
-  public final ImageView avatarImageView;
+  public final RoundedImageView avatarImageView;
 
   @NonNull
   public final ConstraintLayout layoutNotification;
@@ -33,7 +34,7 @@ public final class LayoutNotificationsBinding implements ViewBinding {
   public final ImageView otherImageView;
 
   private LayoutNotificationsBinding(@NonNull ConstraintLayout rootView,
-      @NonNull ImageView avatarImageView, @NonNull ConstraintLayout layoutNotification,
+      @NonNull RoundedImageView avatarImageView, @NonNull ConstraintLayout layoutNotification,
       @NonNull TextView notificationText, @NonNull ImageView otherImageView) {
     this.rootView = rootView;
     this.avatarImageView = avatarImageView;
@@ -70,7 +71,7 @@ public final class LayoutNotificationsBinding implements ViewBinding {
     int id;
     missingId: {
       id = R.id.avatarImageView;
-      ImageView avatarImageView = ViewBindings.findChildViewById(rootView, id);
+      RoundedImageView avatarImageView = ViewBindings.findChildViewById(rootView, id);
       if (avatarImageView == null) {
         break missingId;
       }

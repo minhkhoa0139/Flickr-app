@@ -4,13 +4,13 @@ package vn.edu.usth.flickrapp.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.makeramen.roundedimageview.RoundedImageView;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -21,7 +21,7 @@ public final class LayoutCommentBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
-  public final ImageView avatarImageView;
+  public final RoundedImageView avatarImageView;
 
   @NonNull
   public final TextView commentTextView;
@@ -32,9 +32,9 @@ public final class LayoutCommentBinding implements ViewBinding {
   @NonNull
   public final TextView timestampTextView;
 
-  private LayoutCommentBinding(@NonNull LinearLayout rootView, @NonNull ImageView avatarImageView,
-      @NonNull TextView commentTextView, @NonNull TextView nameTextView,
-      @NonNull TextView timestampTextView) {
+  private LayoutCommentBinding(@NonNull LinearLayout rootView,
+      @NonNull RoundedImageView avatarImageView, @NonNull TextView commentTextView,
+      @NonNull TextView nameTextView, @NonNull TextView timestampTextView) {
     this.rootView = rootView;
     this.avatarImageView = avatarImageView;
     this.commentTextView = commentTextView;
@@ -70,7 +70,7 @@ public final class LayoutCommentBinding implements ViewBinding {
     int id;
     missingId: {
       id = R.id.avatarImageView;
-      ImageView avatarImageView = ViewBindings.findChildViewById(rootView, id);
+      RoundedImageView avatarImageView = ViewBindings.findChildViewById(rootView, id);
       if (avatarImageView == null) {
         break missingId;
       }

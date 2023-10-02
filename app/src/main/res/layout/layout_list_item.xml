@@ -17,11 +17,15 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <ImageView
+        <com.makeramen.roundedimageview.RoundedImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/avatarImageView"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:src="@drawable/ic_ava"/>
+            android:background="@drawable/circle_background"
+            android:scaleType="fitCenter"
+            app:riv_corner_radius="100dip"
+            app:riv_tile_mode="repeat"
+            android:layout_width="50dp"
+            android:layout_height="50dp"/>
 
         <TextView
             android:id="@+id/usernameTextView"
@@ -72,6 +76,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="50"/>
+
+        <ImageView
+            android:id="@+id/btnShare"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_share"
+            android:layout_marginLeft="120dp"/>
 
     </LinearLayout>
 

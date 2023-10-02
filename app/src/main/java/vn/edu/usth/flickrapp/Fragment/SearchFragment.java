@@ -102,7 +102,6 @@ public class SearchFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable editable) {
-                // Thực hiện các hành động sau khi văn bản đã thay đổi
             }
         });
 

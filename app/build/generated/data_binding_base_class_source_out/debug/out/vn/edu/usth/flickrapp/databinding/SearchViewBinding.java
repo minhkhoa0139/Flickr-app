@@ -21,14 +21,19 @@ public final class SearchViewBinding implements ViewBinding {
   private final RelativeLayout rootView;
 
   @NonNull
+  public final RecyclerView recyclerViewHistory;
+
+  @NonNull
   public final RecyclerView recyclerViewSearch;
 
   @NonNull
   public final EditText txtSearch;
 
   private SearchViewBinding(@NonNull RelativeLayout rootView,
-      @NonNull RecyclerView recyclerViewSearch, @NonNull EditText txtSearch) {
+      @NonNull RecyclerView recyclerViewHistory, @NonNull RecyclerView recyclerViewSearch,
+      @NonNull EditText txtSearch) {
     this.rootView = rootView;
+    this.recyclerViewHistory = recyclerViewHistory;
     this.recyclerViewSearch = recyclerViewSearch;
     this.txtSearch = txtSearch;
   }
@@ -60,6 +65,12 @@ public final class SearchViewBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.recyclerViewHistory;
+      RecyclerView recyclerViewHistory = ViewBindings.findChildViewById(rootView, id);
+      if (recyclerViewHistory == null) {
+        break missingId;
+      }
+
       id = R.id.recyclerViewSearch;
       RecyclerView recyclerViewSearch = ViewBindings.findChildViewById(rootView, id);
       if (recyclerViewSearch == null) {
@@ -72,7 +83,8 @@ public final class SearchViewBinding implements ViewBinding {
         break missingId;
       }
 
-      return new SearchViewBinding((RelativeLayout) rootView, recyclerViewSearch, txtSearch);
+      return new SearchViewBinding((RelativeLayout) rootView, recyclerViewHistory,
+          recyclerViewSearch, txtSearch);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

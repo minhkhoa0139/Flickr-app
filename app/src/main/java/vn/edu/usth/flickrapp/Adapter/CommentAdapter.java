@@ -1,6 +1,7 @@
 package vn.edu.usth.flickrapp.Adapter;
 
 import android.content.Context;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +9,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.List;
 
 import vn.edu.usth.flickrapp.Model.Comment;
@@ -35,6 +44,29 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentV
         holder.commentTextView.setText(comment.getComment());
         holder.timestampTextView.setText(comment.getTimestamp());
         holder.nameTextView.setText(comment.getName());
+
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference usersRef = database.getReference("users");
+        usersRef.orderByChild("email").equalTo(comment.getEmail()).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    for (DataSnapshot userSnapshot : dataSnapshot.getChildren()) {
+                        String avatar = getValue("avatar", userSnapshot);
+                        if(!TextUtils.isEmpty(avatar)) Glide.with(context).load(avatar).into(holder.avatarImageView);
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
+    }
+
+    public String getValue(String path, DataSnapshot userSnapshot)
+    {
+        return userSnapshot.child(path).getValue(String.class);
     }
 
     @Override

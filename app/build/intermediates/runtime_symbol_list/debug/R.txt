@@ -1026,6 +1026,18 @@ int attr removeEmbeddedFabElevation 0x7f0303ab
 int attr restoreState 0x7f0303ac
 int attr reverseLayout 0x7f0303ad
 int attr rippleColor 0x7f0303ae
+int attr riv_border_color 0x7f0304f5
+int attr riv_border_width 0x7f0304f6
+int attr riv_corner_radius 0x7f0304f7
+int attr riv_corner_radius_bottom_left 0x7f0304f8
+int attr riv_corner_radius_bottom_right 0x7f0304f9
+int attr riv_corner_radius_top_left 0x7f0304fa
+int attr riv_corner_radius_top_right 0x7f0304fb
+int attr riv_mutate_background 0x7f0304fc
+int attr riv_oval 0x7f0304fd
+int attr riv_tile_mode 0x7f0304fe
+int attr riv_tile_mode_x 0x7f0304ff
+int attr riv_tile_mode_y 0x7f030500
 int attr rotationCenterId 0x7f0303af
 int attr round 0x7f0303b0
 int attr roundPercent 0x7f0303b1
@@ -2997,6 +3009,7 @@ int drawable btn_radio_off_mtrl 0x7f07008c
 int drawable btn_radio_off_to_on_mtrl_animation 0x7f07008d
 int drawable btn_radio_on_mtrl 0x7f07008e
 int drawable btn_radio_on_to_off_mtrl_animation 0x7f07008f
+int drawable circle_background 0x7f070116
 int drawable common_full_open_on_phone 0x7f070090
 int drawable common_google_signin_btn_icon_dark 0x7f070091
 int drawable common_google_signin_btn_icon_dark_focused 0x7f070092
@@ -3238,6 +3251,7 @@ int id bounceEnd 0x7f080067
 int id bounceStart 0x7f080068
 int id btnCamera 0x7f080069
 int id btnChoose 0x7f08006a
+int id btnShare 0x7f080252
 int id btnSignOut 0x7f08006b
 int id btnUpload 0x7f08006c
 int id button4 0x7f08006d
@@ -3261,6 +3275,7 @@ int id checkboxType 0x7f08007e
 int id checked 0x7f08007f
 int id chronometer 0x7f080080
 int id circle_center 0x7f080081
+int id clamp 0x7f080255
 int id clear_text 0x7f080082
 int id clip_horizontal 0x7f080083
 int id clip_vertical 0x7f080084
@@ -3454,6 +3469,7 @@ int id menu_search 0x7f08013f
 int id message 0x7f080140
 int id middle 0x7f080141
 int id mini 0x7f080142
+int id mirror 0x7f080256
 int id mobile_navigation 0x7f080143
 int id mobile_navigation2 0x7f080144
 int id month_grid 0x7f080145
@@ -3541,10 +3557,12 @@ int id ratio 0x7f080196
 int id rectangles 0x7f080197
 int id recyclerView 0x7f080198
 int id recyclerViewAlbum 0x7f080199
+int id recyclerViewHistory 0x7f080253
 int id recyclerViewNotifications 0x7f08019a
 int id recyclerViewProfile 0x7f08019b
 int id recyclerViewSearch 0x7f08019c
 int id register 0x7f08019d
+int id repeat 0x7f080257
 int id report_drawn 0x7f08019e
 int id reverseSawtooth 0x7f08019f
 int id right 0x7f0801a0
@@ -3697,6 +3715,7 @@ int id txtPassword 0x7f080232
 int id txtProfile1 0x7f080233
 int id txtProfile2 0x7f080234
 int id txtSearch 0x7f080235
+int id txt_history 0x7f080254
 int id unchecked 0x7f080236
 int id uniform 0x7f080237
 int id unlabeled 0x7f080238
@@ -3868,6 +3887,7 @@ int layout fragment_notification 0x7f0b0034
 int layout fragment_public 0x7f0b0035
 int layout fragment_stats 0x7f0b0036
 int layout layout_comment 0x7f0b0037
+int layout layout_history 0x7f0b007d
 int layout layout_image_profile 0x7f0b0038
 int layout layout_list_item 0x7f0b0039
 int layout layout_notifications 0x7f0b003a
@@ -4003,6 +4023,7 @@ int string common_google_play_services_wear_update_text 0x7f120036
 int string common_open_on_phone 0x7f120037
 int string common_signin_button_text 0x7f120038
 int string common_signin_button_text_long 0x7f120039
+int string define_roundedimageview 0x7f1200c0
 int string dest_title 0x7f12003a
 int string error_a11y_label 0x7f12003b
 int string error_icon_content_description 0x7f12003c
@@ -4019,6 +4040,15 @@ int string hello_blank_fragment 0x7f120046
 int string hide_bottom_view_on_scroll_behavior 0x7f120047
 int string icon_content_description 0x7f120048
 int string item_view_role_description 0x7f120049
+int string library_roundedimageview_author 0x7f1200c1
+int string library_roundedimageview_authorWebsite 0x7f1200c2
+int string library_roundedimageview_isOpenSource 0x7f1200c3
+int string library_roundedimageview_libraryDescription 0x7f1200c4
+int string library_roundedimageview_libraryName 0x7f1200c5
+int string library_roundedimageview_libraryVersion 0x7f1200c6
+int string library_roundedimageview_libraryWebsite 0x7f1200c7
+int string library_roundedimageview_licenseId 0x7f1200c8
+int string library_roundedimageview_repositoryLink 0x7f1200c9
 int string m3_ref_typeface_brand_medium 0x7f12004a
 int string m3_ref_typeface_brand_regular 0x7f12004b
 int string m3_ref_typeface_plain_medium 0x7f12004c
@@ -6941,6 +6971,20 @@ int styleable RecyclerView_layoutManager 8
 int styleable RecyclerView_reverseLayout 9
 int styleable RecyclerView_spanCount 10
 int styleable RecyclerView_stackFromEnd 11
+int[] styleable RoundedImageView { 0x0101011d, 0x7f0304f5, 0x7f0304f6, 0x7f0304f7, 0x7f0304f8, 0x7f0304f9, 0x7f0304fa, 0x7f0304fb, 0x7f0304fc, 0x7f0304fd, 0x7f0304fe, 0x7f0304ff, 0x7f030500 }
+int styleable RoundedImageView_android_scaleType 0
+int styleable RoundedImageView_riv_border_color 1
+int styleable RoundedImageView_riv_border_width 2
+int styleable RoundedImageView_riv_corner_radius 3
+int styleable RoundedImageView_riv_corner_radius_bottom_left 4
+int styleable RoundedImageView_riv_corner_radius_bottom_right 5
+int styleable RoundedImageView_riv_corner_radius_top_left 6
+int styleable RoundedImageView_riv_corner_radius_top_right 7
+int styleable RoundedImageView_riv_mutate_background 8
+int styleable RoundedImageView_riv_oval 9
+int styleable RoundedImageView_riv_tile_mode 10
+int styleable RoundedImageView_riv_tile_mode_x 11
+int styleable RoundedImageView_riv_tile_mode_y 12
 int[] styleable ScrimInsetsFrameLayout { 0x7f030248 }
 int styleable ScrimInsetsFrameLayout_insetForeground 0
 int[] styleable ScrollingViewBehavior_Layout { 0x7f03006e }

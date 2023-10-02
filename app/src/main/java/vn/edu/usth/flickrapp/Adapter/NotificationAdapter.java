@@ -8,16 +8,24 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.io.Serializable;
 import java.util.List;
 
+import vn.edu.usth.flickrapp.LoginActivity;
+import vn.edu.usth.flickrapp.MainActivity;
 import vn.edu.usth.flickrapp.Model.Image;
 import vn.edu.usth.flickrapp.Model.Notification;
 import vn.edu.usth.flickrapp.Model.User;
@@ -52,7 +60,23 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
         holder.notificationText.setText(notification.getContent());
         holder.otherImageView.setImageResource(notification.getOtherImageResId());
 
-        if(!TextUtils.isEmpty(user.avatar)) Glide.with(context).load(user.avatar).into(holder.avatarImageView);
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference usersRef = database.getReference("users");
+        usersRef.orderByChild("email").equalTo(obj.getEmailPhu()).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    for (DataSnapshot userSnapshot : dataSnapshot.getChildren()) {
+                        String avatar = getValue("avatar", userSnapshot);
+                        if(!TextUtils.isEmpty(avatar)) Glide.with(context).load(avatar).into(holder.avatarImageView);
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
         Glide.with(context).load(obj.getUri()).into(holder.otherImageView);
 
         holder.layout_notification.setOnClickListener(new View.OnClickListener() {
@@ -84,5 +108,10 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
             otherImageView = itemView.findViewById(R.id.otherImageView);
             layout_notification = itemView.findViewById(R.id.layout_notification);
         }
+    }
+
+    public String getValue(String path, DataSnapshot userSnapshot)
+    {
+        return userSnapshot.child(path).getValue(String.class);
     }
 }

@@ -13,6 +13,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import androidx.viewpager2.widget.ViewPager2;
 import com.google.android.material.tabs.TabLayout;
+import com.makeramen.roundedimageview.RoundedImageView;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -32,7 +33,7 @@ public final class ProfileBinding implements ViewBinding {
   public final ImageView button6;
 
   @NonNull
-  public final ImageView imageAvatar;
+  public final RoundedImageView imageAvatar;
 
   @NonNull
   public final ImageView imageView4;
@@ -47,7 +48,7 @@ public final class ProfileBinding implements ViewBinding {
   public final ViewPager2 viewPagerProfile;
 
   private ProfileBinding(@NonNull RelativeLayout rootView, @NonNull ImageView btnSignOut,
-      @NonNull ImageView button4, @NonNull ImageView button6, @NonNull ImageView imageAvatar,
+      @NonNull ImageView button4, @NonNull ImageView button6, @NonNull RoundedImageView imageAvatar,
       @NonNull ImageView imageView4, @NonNull TabLayout tabLayout,
       @NonNull TextView textNameProfile, @NonNull ViewPager2 viewPagerProfile) {
     this.rootView = rootView;
@@ -107,7 +108,7 @@ public final class ProfileBinding implements ViewBinding {
       }
 
       id = R.id.imageAvatar;
-      ImageView imageAvatar = ViewBindings.findChildViewById(rootView, id);
+      RoundedImageView imageAvatar = ViewBindings.findChildViewById(rootView, id);
       if (imageAvatar == null) {
         break missingId;
       }

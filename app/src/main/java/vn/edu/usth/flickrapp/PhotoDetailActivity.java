@@ -43,6 +43,7 @@ public class PhotoDetailActivity extends AppCompatActivity {
     TextView likeCountTextView, commentCountTextView;
     Button sendButton;
     Boolean isLiked = false;
+    List<Comment> commentList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -139,7 +140,7 @@ public class PhotoDetailActivity extends AppCompatActivity {
 
     public void reloadComment()
     {
-        List<Comment> commentList = new ArrayList<>();
+        commentList = new ArrayList<>();
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference commentsRef = database.getReference("comment");
         commentsRef.orderByChild("linkUri").equalTo(image.getUri()).addValueEventListener(new ValueEventListener() {
