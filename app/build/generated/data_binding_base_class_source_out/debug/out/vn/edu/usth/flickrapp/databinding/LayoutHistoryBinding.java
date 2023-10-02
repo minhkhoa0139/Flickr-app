@@ -20,10 +20,15 @@ public final class LayoutHistoryBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
+  public final LinearLayout layoutHistory;
+
+  @NonNull
   public final TextView txtHistory;
 
-  private LayoutHistoryBinding(@NonNull LinearLayout rootView, @NonNull TextView txtHistory) {
+  private LayoutHistoryBinding(@NonNull LinearLayout rootView, @NonNull LinearLayout layoutHistory,
+      @NonNull TextView txtHistory) {
     this.rootView = rootView;
+    this.layoutHistory = layoutHistory;
     this.txtHistory = txtHistory;
   }
 
@@ -54,13 +59,15 @@ public final class LayoutHistoryBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      LinearLayout layoutHistory = (LinearLayout) rootView;
+
       id = R.id.txt_history;
       TextView txtHistory = ViewBindings.findChildViewById(rootView, id);
       if (txtHistory == null) {
         break missingId;
       }
 
-      return new LayoutHistoryBinding((LinearLayout) rootView, txtHistory);
+      return new LayoutHistoryBinding((LinearLayout) rootView, layoutHistory, txtHistory);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

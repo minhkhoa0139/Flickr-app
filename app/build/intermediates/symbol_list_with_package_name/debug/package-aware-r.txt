@@ -3419,6 +3419,7 @@ id jumpToEnd
 id jumpToStart
 id labeled
 id layout
+id layout_history
 id layout_notification
 id layout_slide
 id left

@@ -8,10 +8,6 @@
         "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\drawable\\bg.jpg"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/layout_profile.xml.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/layout/profile.xml"
-    },
-    {
         "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\drawable_anhflickr4.jpg.flat",
         "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\drawable\\anhflickr4.jpg"
     },
@@ -98,6 +94,10 @@
     {
         "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\layout_layout_comment.xml.flat",
         "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\layout\\layout_comment.xml"
+    },
+    {
+        "merged": "vn.edu.usth.flickrapp-merged_res-51:/layout_layout_history.xml.flat",
+        "source": "vn.edu.usth.flickrapp-main-53:/layout/layout_history.xml"
     },
     {
         "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\drawable_ic_like.png.flat",
@@ -256,12 +256,12 @@
         "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\drawable\\circle_background.xml"
     },
     {
-        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\mipmap-xxhdpi\\ic_launcher_round.webp"
-    },
-    {
         "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\layout_layout_history.xml.flat",
         "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\layout\\layout_history.xml"
+    },
+    {
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\mipmap-xxhdpi\\ic_launcher_round.webp"
     },
     {
         "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\drawable_anhflickr1.jpg.flat",

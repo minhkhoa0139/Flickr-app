@@ -87,6 +87,7 @@ id imageTabProfile
 id imageView
 id imageView4
 id imageViewDetail
+id layout_history
 id layout_notification
 id layout_slide
 id likeCountDetailTextView

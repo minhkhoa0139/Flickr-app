@@ -3418,6 +3418,7 @@ int id jumpToEnd 0x7f08010d
 int id jumpToStart 0x7f08010e
 int id labeled 0x7f08010f
 int id layout 0x7f080110
+int id layout_history 0x7f08025e
 int id layout_notification 0x7f080111
 int id layout_slide 0x7f080112
 int id left 0x7f080113
