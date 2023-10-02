@@ -1,6 +1,8 @@
 package vn.edu.usth.flickrapp.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +21,8 @@ import java.util.List;
 
 import vn.edu.usth.flickrapp.Model.Image;
 import vn.edu.usth.flickrapp.Model.Notification;
+import vn.edu.usth.flickrapp.Model.User;
+import vn.edu.usth.flickrapp.PhotoDetailActivity;
 import vn.edu.usth.flickrapp.R;
 
 public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHolder> {
@@ -26,9 +30,12 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
     private Context context;
     private List<Image> imagelst;
 
-    public ImageAdapter(Context context, List<Image> imagelst) {
+    private User user;
+
+    public ImageAdapter(Context context, List<Image> imagelst, User user) {
         this.context = context;
         this.imagelst = imagelst;
+        this.user = user;
     }
 
     @NonNull
@@ -49,6 +56,16 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
         holder.commentCountTextView.setText(obj.getCommentCount());
         holder.emailTextView.setText(obj.getEmail());
         holder.emailPhuTextView.setText(obj.getEmailPhu());
+
+        holder.imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, PhotoDetailActivity.class);
+                intent.putExtra("imageObject", obj);
+                intent.putExtra("user", user);
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override

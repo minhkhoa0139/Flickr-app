@@ -52,12 +52,20 @@
         "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-52:\\layout\\dialog_input.xml"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-mergeDebugResources-49:/layout/login_activity.xml",
-        "source": "vn.edu.usth.flickrapp-main-52:/layout/login_activity.xml"
+        "merged": "vn.edu.usth.flickrapp-mergeDebugResources-49:/layout/activity_photo_detail.xml",
+        "source": "vn.edu.usth.flickrapp-main-52:/layout/activity_photo_detail.xml"
     },
     {
         "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-mergeDebugResources-49:\\layout\\fragment_albums.xml",
         "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-52:\\layout\\fragment_albums.xml"
+    },
+    {
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-mergeDebugResources-49:\\layout\\layout_comment.xml",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-52:\\layout\\layout_comment.xml"
+    },
+    {
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-mergeDebugResources-49:\\layout\\activity_photo_detail.xml",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-52:\\layout\\activity_photo_detail.xml"
     },
     {
         "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-mergeDebugResources-49:\\layout\\activity_news.xml",

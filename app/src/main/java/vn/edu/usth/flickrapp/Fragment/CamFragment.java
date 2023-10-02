@@ -88,7 +88,7 @@ public class CamFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Drawable drawable = imageView.getDrawable();
-                if (drawable instanceof BitmapDrawable || TextUtils.isEmpty(ContentImage.getText().toString())) {
+                if (drawable instanceof BitmapDrawable && !TextUtils.isEmpty(ContentImage.getText().toString())) {
                     BitmapDrawable bitmapDrawable = (BitmapDrawable) drawable;
 
                     ProgressDialog progressDialog = new ProgressDialog(getActivity());
@@ -162,7 +162,7 @@ public class CamFragment extends Fragment {
                     });
                 }
                 else {
-                    if (drawable instanceof BitmapDrawable)
+                    if (!(drawable instanceof BitmapDrawable))
                         Toast.makeText(getActivity(), "Chọn ảnh để tải.", Toast.LENGTH_SHORT).show();
                     if (TextUtils.isEmpty(ContentImage.getText().toString()))
                         Toast.makeText(getActivity(), "Nhập nội dung ảnh", Toast.LENGTH_SHORT).show();

@@ -7,6 +7,7 @@
     <uses-sdk
         android:minSdkVersion="24"
         android:targetSdkVersion="34" />
+
     <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
     <!-- <uses-sdk android:minSdkVersion="14"/> -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -32,13 +33,14 @@
         android:testOnly="true"
         android:theme="@style/Theme.FlickrApp" >
         <activity
+            android:name="vn.edu.usth.flickrapp.PhotoDetailActivity"
+            android:exported="false" />
+        <activity
             android:name="vn.edu.usth.flickrapp.NewsActivity"
-            android:exported="true" >
-        </activity>
+            android:exported="true" />
         <activity
             android:name="vn.edu.usth.flickrapp.LoginActivity"
-            android:exported="true" >
-        </activity>
+            android:exported="true" />
         <activity
             android:name="vn.edu.usth.flickrapp.WelcomeActivity"
             android:exported="true" >
@@ -50,24 +52,19 @@
         </activity>
         <activity
             android:name="vn.edu.usth.flickrapp.MainActivity"
-            android:exported="true" >
-        </activity>
+            android:exported="true" />
         <activity
             android:name="vn.edu.usth.flickrapp.SearchActivity"
-            android:exported="true" >
-        </activity>
+            android:exported="true" />
         <activity
             android:name="vn.edu.usth.flickrapp.TabLayoutActivity"
-            android:exported="true" >
-        </activity>
+            android:exported="true" />
         <activity
             android:name="vn.edu.usth.flickrapp.SignUpActivity"
-            android:exported="true" >
-        </activity>
+            android:exported="true" />
         <activity
             android:name="vn.edu.usth.flickrapp.Adapter.ViewPager_Profile_Adapter"
-            android:exported="true" >
-        </activity>
+            android:exported="true" />
 
         <provider
             android:name="androidx.startup.InitializationProvider"

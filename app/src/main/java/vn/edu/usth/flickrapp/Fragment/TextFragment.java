@@ -36,8 +36,6 @@ public class TextFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.slide_item, container, false);
-        TextView textView = view.findViewById(R.id.textView);
-        textView.setText(text);
         return view;
     }
 }

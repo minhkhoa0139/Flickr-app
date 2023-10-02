@@ -3267,8 +3267,13 @@ id clip_vertical
 id clockwise
 id closest
 id collapseActionView
+id commentCountDetailTextView
 id commentCountTextView
+id commentEditText
 id commentImageView
+id commentImageViewDetail
+id commentTextView
+id commentsRecyclerView
 id compress
 id confirm_button
 id constraint
@@ -3378,6 +3383,7 @@ id image
 id imageContentImageView
 id imageView
 id imageView4
+id imageViewDetail
 id immediateStop
 id included
 id indeterminate
@@ -3394,8 +3400,10 @@ id left
 id leftToRight
 id legacy
 id light
+id likeCountDetailTextView
 id likeCountTextView
 id likeImageView
+id likeImageViewDetail
 id line1
 id line3
 id linear
@@ -3473,6 +3481,7 @@ id mtrl_picker_text_input_range_start
 id mtrl_picker_title_text
 id mtrl_view_tag_bottom_padding
 id multiply
+id nameTextView
 id nav_controller_view_tag
 id nav_host_fragment_container
 id navigation_bar_item_active_indicator_view
@@ -3575,6 +3584,7 @@ id search_voice_btn
 id select_dialog_listview
 id selected
 id selection_type
+id sendButton
 id sharedValueSet
 id sharedValueUnset
 id shortcut
@@ -3635,11 +3645,12 @@ id tag_window_insets_animation_callback
 id text
 id text2
 id textEnd
+id textInputLayout
+id textNameProfile
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
-id textView
 id textView_Content
 id textView_Title
 id text_input_end_icon
@@ -3652,6 +3663,7 @@ id textinput_placeholder
 id textinput_prefix_text
 id textinput_suffix_text
 id time
+id timestampTextView
 id title
 id titleDividerNoCustom
 id title_template
@@ -3685,6 +3697,7 @@ id vertical_only
 id viewPagerHome
 id view_offset_helper
 id view_pager
+id view_pagerProfile
 id view_transition
 id view_tree_lifecycle_owner
 id view_tree_on_back_pressed_dispatcher_owner
@@ -3819,6 +3832,7 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_main
 layout activity_news
+layout activity_photo_detail
 layout activity_welcome
 layout custom_dialog
 layout design_bottom_navigation_item
@@ -3843,6 +3857,7 @@ layout fragment_groups
 layout fragment_notification
 layout fragment_public
 layout fragment_stats
+layout layout_comment
 layout layout_list_item
 layout layout_notifications
 layout login_activity

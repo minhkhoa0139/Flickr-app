@@ -45,11 +45,12 @@
 
     </com.google.android.material.tabs.TabLayout>
 
-    <!--    <androidx.viewpager2.widget.ViewPager2-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:id="@+id/view_pager"-->
-    <!--        android:layout_below="@+id/tab_layout"></androidx.viewpager2.widget.ViewPager2>-->
+    <androidx.viewpager2.widget.ViewPager2
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/view_pagerProfile"
+        android:layout_below="@+id/tab_layout">
+    </androidx.viewpager2.widget.ViewPager2>
 
     <ImageView
         android:id="@+id/imageView4"
@@ -83,7 +84,7 @@
 
 
     <Button
-        android:background="@drawable/shape"
+        android:background="@drawable/ic_ava"
         android:id="@+id/button8"
         android:layout_width="50dp"
         android:layout_height="50dp"
@@ -91,14 +92,14 @@
         android:layout_marginLeft="180.5dp" />
 
     <TextView
-        android:textColor="@color/white"
-        android:layout_marginLeft="150dp"
+        android:textColor="@color/black"
         android:layout_marginTop="140dp"
-        android:id="@+id/textView"
+        android:id="@+id/textNameProfile"
         android:textSize="20dp"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Vu Tue Nam"
+        android:gravity="center"
         android:textStyle="bold"/>
 
 

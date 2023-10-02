@@ -49,7 +49,7 @@ public class NewsFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
         lstImage = new ArrayList<>();
-        imageAdapter = new ImageAdapter(getContext(), lstImage);
+        imageAdapter = new ImageAdapter(getContext(), lstImage, user);
         recyclerView.setAdapter(imageAdapter);
         getNewsImage();
 

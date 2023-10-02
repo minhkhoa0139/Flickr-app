@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import androidx.viewpager2.widget.ViewPager2;
 import com.google.android.material.tabs.TabLayout;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -41,11 +42,15 @@ public final class ProfileBinding implements ViewBinding {
   public final TabLayout tabLayout;
 
   @NonNull
-  public final TextView textView;
+  public final TextView textNameProfile;
+
+  @NonNull
+  public final ViewPager2 viewPagerProfile;
 
   private ProfileBinding(@NonNull RelativeLayout rootView, @NonNull ImageView button4,
       @NonNull ImageView button6, @NonNull ImageView button7, @NonNull Button button8,
-      @NonNull ImageView imageView4, @NonNull TabLayout tabLayout, @NonNull TextView textView) {
+      @NonNull ImageView imageView4, @NonNull TabLayout tabLayout,
+      @NonNull TextView textNameProfile, @NonNull ViewPager2 viewPagerProfile) {
     this.rootView = rootView;
     this.button4 = button4;
     this.button6 = button6;
@@ -53,7 +58,8 @@ public final class ProfileBinding implements ViewBinding {
     this.button8 = button8;
     this.imageView4 = imageView4;
     this.tabLayout = tabLayout;
-    this.textView = textView;
+    this.textNameProfile = textNameProfile;
+    this.viewPagerProfile = viewPagerProfile;
   }
 
   @Override
@@ -119,14 +125,20 @@ public final class ProfileBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.textView;
-      TextView textView = ViewBindings.findChildViewById(rootView, id);
-      if (textView == null) {
+      id = R.id.textNameProfile;
+      TextView textNameProfile = ViewBindings.findChildViewById(rootView, id);
+      if (textNameProfile == null) {
+        break missingId;
+      }
+
+      id = R.id.view_pagerProfile;
+      ViewPager2 viewPagerProfile = ViewBindings.findChildViewById(rootView, id);
+      if (viewPagerProfile == null) {
         break missingId;
       }
 
       return new ProfileBinding((RelativeLayout) rootView, button4, button6, button7, button8,
-          imageView4, tabLayout, textView);
+          imageView4, tabLayout, textNameProfile, viewPagerProfile);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
