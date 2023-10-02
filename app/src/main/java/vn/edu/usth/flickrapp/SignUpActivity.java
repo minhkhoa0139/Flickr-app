@@ -3,10 +3,13 @@ package vn.edu.usth.flickrapp;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -49,7 +52,6 @@ public class SignUpActivity extends AppCompatActivity {
                 ProgressDialog progressDialog = new ProgressDialog(SignUpActivity.this);
                 progressDialog.setMessage("Kiểm tra thông tin đăng ký...");
                 progressDialog.setCancelable(false);
-                progressDialog.show();
 
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
                 DatabaseReference usersRef = database.getReference("users");
@@ -61,6 +63,52 @@ public class SignUpActivity extends AppCompatActivity {
                 String password = txtPassword.getText().toString();
                 User user = new User(firstName, lastName, birthday, email, password);
 
+                TextView errorMessageFirstName = findViewById(R.id.errorMessageFirstName);
+                TextView errorMessageLastName = findViewById(R.id.errorMessageLastName);
+                TextView errorMessageBirthday = findViewById(R.id.errorMessageBirthday);
+                TextView errorMessageEmail = findViewById(R.id.errorMessageEmail);
+                TextView errorMessagePassword = findViewById(R.id.errorMessagePass);
+                if(TextUtils.isEmpty(firstName))
+                {
+                    errorMessageFirstName.setVisibility(View.VISIBLE);
+                    errorMessageFirstName.setTextColor(Color.RED);
+                    return;
+                }
+                else errorMessageFirstName.setVisibility(View.GONE);
+
+                if(TextUtils.isEmpty(lastName))
+                {
+                    errorMessageLastName.setVisibility(View.VISIBLE);
+                    errorMessageLastName.setTextColor(Color.RED);
+                    return;
+                }
+                else errorMessageLastName.setVisibility(View.GONE);
+
+                if(TextUtils.isEmpty(birthday))
+                {
+                    errorMessageBirthday.setVisibility(View.VISIBLE);
+                    errorMessageBirthday.setTextColor(Color.RED);
+                    return;
+                }
+                else errorMessageBirthday.setVisibility(View.GONE);
+
+                if(TextUtils.isEmpty(email))
+                {
+                    errorMessageEmail.setVisibility(View.VISIBLE);
+                    errorMessageEmail.setTextColor(Color.RED);
+                    return;
+                }
+                else errorMessageEmail.setVisibility(View.GONE);
+
+                if(TextUtils.isEmpty(password))
+                {
+                    errorMessagePassword.setVisibility(View.VISIBLE);
+                    errorMessagePassword.setTextColor(Color.RED);
+                    return;
+                }
+                else errorMessagePassword.setVisibility(View.GONE);
+
+                progressDialog.show();
                 usersRef.orderByChild("email").equalTo(email).addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {

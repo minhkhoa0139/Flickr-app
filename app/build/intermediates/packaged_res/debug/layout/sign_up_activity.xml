@@ -19,76 +19,127 @@
             android:layout_marginBottom="30dp"
             android:src="@drawable/logo" />
 
-        <EditText
-            android:id="@+id/txtFirstName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="15"
-            android:hint="First Name"
-            android:textSize="20dp"
-            android:text="FirstName" />
-
-        <EditText
-            android:id="@+id/txtLastName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="15"
-            android:hint="Last Name"
-            android:textSize="20dp"
-            android:text="LastName" />
-
-
-        <EditText
-            android:id="@+id/txtBirthDay"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="15"
-            android:hint="Birthday"
-            android:inputType="date"
-            android:textSize="20dp"
-            android:text="13/09/2001" />
-
-        <EditText
-            android:id="@+id/txtEmail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="15"
-            android:hint="Email"
-            android:textSize="20dp"
-            android:text="test@gmail.com" />
-
-
-        <EditText
-            android:id="@+id/txtPassword"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:drawableRight="@drawable/baseline_disabled_visible_24"
-            android:ems="15"
-            android:hint="Password"
-            android:inputType="textPassword"
-            android:textSize="20dp"
-            android:text="123" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtFirstName"
+                android:hint="First Name"
+                android:text="FirstName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
+            android:id="@+id/errorMessageFirstName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:ems="15"
-            android:hint="12 or more characters"
-            android:drawableLeft="@drawable/baseline_check_circle_24"
-            android:paddingLeft="25dp"
-            android:layout_gravity="left" />
+            android:text="First Name không được để trống"
+            android:textColor="#FF0000"
+            android:visibility="gone"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtLastName"
+                android:hint="Last Name"
+                android:text="LastName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
+            android:id="@+id/errorMessageLastName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:ems="15"
-            android:hint="No leading spaces"
-            android:drawableLeft="@drawable/baseline_check_circle_24"
-            android:paddingLeft="25dp"
-            android:layout_gravity="left" />
+            android:text="Last Name không được để trống"
+            android:textColor="#FF0000"
+            android:visibility="gone"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtBirthDay"
+                android:hint="Birthday"
+                android:text="13/09/2001"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/errorMessageBirthday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Birthday không được để trống"
+            android:textColor="#FF0000"
+            android:visibility="gone"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Email"
+                android:text="test@gmail.com"
+                android:background="@android:color/transparent"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/errorMessageEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email không được để trống"
+            android:textColor="#FF0000"
+            android:visibility="gone"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            app:passwordToggleEnabled="true">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Password"
+                android:text="123"
+                android:inputType="textPassword"
+                android:background="@android:color/transparent"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/errorMessagePass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Password không được để trống"
+            android:textColor="#FF0000"
+            android:visibility="gone"/>
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:ems="15"-->
+<!--            android:hint="12 or more characters"-->
+<!--            android:drawableLeft="@drawable/baseline_check_circle_24"-->
+<!--            android:paddingLeft="25dp"-->
+<!--            android:layout_gravity="left" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginBottom="20dp"-->
+<!--            android:ems="15"-->
+<!--            android:hint="No leading spaces"-->
+<!--            android:drawableLeft="@drawable/baseline_check_circle_24"-->
+<!--            android:paddingLeft="25dp"-->
+<!--            android:layout_gravity="left" />-->
 
         <Button
             android:id="@+id/signup_button"

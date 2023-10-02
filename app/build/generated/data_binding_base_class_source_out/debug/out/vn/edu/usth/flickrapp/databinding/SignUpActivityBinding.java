@@ -5,12 +5,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.google.android.material.textfield.TextInputEditText;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -21,31 +22,54 @@ public final class SignUpActivityBinding implements ViewBinding {
   private final RelativeLayout rootView;
 
   @NonNull
+  public final TextView errorMessageBirthday;
+
+  @NonNull
+  public final TextView errorMessageEmail;
+
+  @NonNull
+  public final TextView errorMessageFirstName;
+
+  @NonNull
+  public final TextView errorMessageLastName;
+
+  @NonNull
+  public final TextView errorMessagePass;
+
+  @NonNull
   public final Button loginButton;
 
   @NonNull
   public final Button signupButton;
 
   @NonNull
-  public final EditText txtBirthDay;
+  public final TextInputEditText txtBirthDay;
 
   @NonNull
-  public final EditText txtEmail;
+  public final TextInputEditText txtEmail;
 
   @NonNull
-  public final EditText txtFirstName;
+  public final TextInputEditText txtFirstName;
 
   @NonNull
-  public final EditText txtLastName;
+  public final TextInputEditText txtLastName;
 
   @NonNull
-  public final EditText txtPassword;
+  public final TextInputEditText txtPassword;
 
-  private SignUpActivityBinding(@NonNull RelativeLayout rootView, @NonNull Button loginButton,
-      @NonNull Button signupButton, @NonNull EditText txtBirthDay, @NonNull EditText txtEmail,
-      @NonNull EditText txtFirstName, @NonNull EditText txtLastName,
-      @NonNull EditText txtPassword) {
+  private SignUpActivityBinding(@NonNull RelativeLayout rootView,
+      @NonNull TextView errorMessageBirthday, @NonNull TextView errorMessageEmail,
+      @NonNull TextView errorMessageFirstName, @NonNull TextView errorMessageLastName,
+      @NonNull TextView errorMessagePass, @NonNull Button loginButton, @NonNull Button signupButton,
+      @NonNull TextInputEditText txtBirthDay, @NonNull TextInputEditText txtEmail,
+      @NonNull TextInputEditText txtFirstName, @NonNull TextInputEditText txtLastName,
+      @NonNull TextInputEditText txtPassword) {
     this.rootView = rootView;
+    this.errorMessageBirthday = errorMessageBirthday;
+    this.errorMessageEmail = errorMessageEmail;
+    this.errorMessageFirstName = errorMessageFirstName;
+    this.errorMessageLastName = errorMessageLastName;
+    this.errorMessagePass = errorMessagePass;
     this.loginButton = loginButton;
     this.signupButton = signupButton;
     this.txtBirthDay = txtBirthDay;
@@ -82,6 +106,36 @@ public final class SignUpActivityBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.errorMessageBirthday;
+      TextView errorMessageBirthday = ViewBindings.findChildViewById(rootView, id);
+      if (errorMessageBirthday == null) {
+        break missingId;
+      }
+
+      id = R.id.errorMessageEmail;
+      TextView errorMessageEmail = ViewBindings.findChildViewById(rootView, id);
+      if (errorMessageEmail == null) {
+        break missingId;
+      }
+
+      id = R.id.errorMessageFirstName;
+      TextView errorMessageFirstName = ViewBindings.findChildViewById(rootView, id);
+      if (errorMessageFirstName == null) {
+        break missingId;
+      }
+
+      id = R.id.errorMessageLastName;
+      TextView errorMessageLastName = ViewBindings.findChildViewById(rootView, id);
+      if (errorMessageLastName == null) {
+        break missingId;
+      }
+
+      id = R.id.errorMessagePass;
+      TextView errorMessagePass = ViewBindings.findChildViewById(rootView, id);
+      if (errorMessagePass == null) {
+        break missingId;
+      }
+
       id = R.id.login_button;
       Button loginButton = ViewBindings.findChildViewById(rootView, id);
       if (loginButton == null) {
@@ -95,37 +149,38 @@ public final class SignUpActivityBinding implements ViewBinding {
       }
 
       id = R.id.txtBirthDay;
-      EditText txtBirthDay = ViewBindings.findChildViewById(rootView, id);
+      TextInputEditText txtBirthDay = ViewBindings.findChildViewById(rootView, id);
       if (txtBirthDay == null) {
         break missingId;
       }
 
       id = R.id.txtEmail;
-      EditText txtEmail = ViewBindings.findChildViewById(rootView, id);
+      TextInputEditText txtEmail = ViewBindings.findChildViewById(rootView, id);
       if (txtEmail == null) {
         break missingId;
       }
 
       id = R.id.txtFirstName;
-      EditText txtFirstName = ViewBindings.findChildViewById(rootView, id);
+      TextInputEditText txtFirstName = ViewBindings.findChildViewById(rootView, id);
       if (txtFirstName == null) {
         break missingId;
       }
 
       id = R.id.txtLastName;
-      EditText txtLastName = ViewBindings.findChildViewById(rootView, id);
+      TextInputEditText txtLastName = ViewBindings.findChildViewById(rootView, id);
       if (txtLastName == null) {
         break missingId;
       }
 
       id = R.id.txtPassword;
-      EditText txtPassword = ViewBindings.findChildViewById(rootView, id);
+      TextInputEditText txtPassword = ViewBindings.findChildViewById(rootView, id);
       if (txtPassword == null) {
         break missingId;
       }
 
-      return new SignUpActivityBinding((RelativeLayout) rootView, loginButton, signupButton,
-          txtBirthDay, txtEmail, txtFirstName, txtLastName, txtPassword);
+      return new SignUpActivityBinding((RelativeLayout) rootView, errorMessageBirthday,
+          errorMessageEmail, errorMessageFirstName, errorMessageLastName, errorMessagePass,
+          loginButton, signupButton, txtBirthDay, txtEmail, txtFirstName, txtLastName, txtPassword);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

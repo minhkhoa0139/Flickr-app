@@ -3051,6 +3051,7 @@ drawable ic_option
 drawable ic_search_black_24
 drawable ic_search_black_24dp
 drawable ic_share
+drawable ic_signout
 drawable logo
 drawable m3_appbar_background
 drawable m3_avd_hide_password
@@ -3336,6 +3337,10 @@ id endToStart
 id enterAlways
 id enterAlwaysCollapsed
 id errorMessage
+id errorMessageBirthday
+id errorMessageEmail
+id errorMessageFirstName
+id errorMessageLastName
 id errorMessagePass
 id exitUntilCollapsed
 id expand_activities_button
@@ -3397,6 +3402,7 @@ id jumpToEnd
 id jumpToStart
 id labeled
 id layout
+id layout_notification
 id left
 id leftToRight
 id legacy
@@ -3695,6 +3701,7 @@ id unchecked
 id uniform
 id unlabeled
 id up
+id uriTextView
 id useLogo
 id usernameTextView
 id vertical_only

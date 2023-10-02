@@ -24,16 +24,20 @@ public final class LayoutNotificationsBinding implements ViewBinding {
   public final ImageView avatarImageView;
 
   @NonNull
+  public final ConstraintLayout layoutNotification;
+
+  @NonNull
   public final TextView notificationText;
 
   @NonNull
   public final ImageView otherImageView;
 
   private LayoutNotificationsBinding(@NonNull ConstraintLayout rootView,
-      @NonNull ImageView avatarImageView, @NonNull TextView notificationText,
-      @NonNull ImageView otherImageView) {
+      @NonNull ImageView avatarImageView, @NonNull ConstraintLayout layoutNotification,
+      @NonNull TextView notificationText, @NonNull ImageView otherImageView) {
     this.rootView = rootView;
     this.avatarImageView = avatarImageView;
+    this.layoutNotification = layoutNotification;
     this.notificationText = notificationText;
     this.otherImageView = otherImageView;
   }
@@ -71,6 +75,8 @@ public final class LayoutNotificationsBinding implements ViewBinding {
         break missingId;
       }
 
+      ConstraintLayout layoutNotification = (ConstraintLayout) rootView;
+
       id = R.id.notificationText;
       TextView notificationText = ViewBindings.findChildViewById(rootView, id);
       if (notificationText == null) {
@@ -84,7 +90,7 @@ public final class LayoutNotificationsBinding implements ViewBinding {
       }
 
       return new LayoutNotificationsBinding((ConstraintLayout) rootView, avatarImageView,
-          notificationText, otherImageView);
+          layoutNotification, notificationText, otherImageView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

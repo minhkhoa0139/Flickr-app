@@ -48,6 +48,9 @@ public final class LayoutListItemBinding implements ViewBinding {
   public final TextView txtContentNews;
 
   @NonNull
+  public final TextView uriTextView;
+
+  @NonNull
   public final TextView usernameTextView;
 
   private LayoutListItemBinding(@NonNull LinearLayout rootView, @NonNull ImageView avatarImageView,
@@ -55,7 +58,7 @@ public final class LayoutListItemBinding implements ViewBinding {
       @NonNull TextView emailPhuTextView, @NonNull TextView emailTextView,
       @NonNull ImageView imageContentImageView, @NonNull TextView likeCountTextView,
       @NonNull ImageView likeImageView, @NonNull TextView txtContentNews,
-      @NonNull TextView usernameTextView) {
+      @NonNull TextView uriTextView, @NonNull TextView usernameTextView) {
     this.rootView = rootView;
     this.avatarImageView = avatarImageView;
     this.commentCountTextView = commentCountTextView;
@@ -66,6 +69,7 @@ public final class LayoutListItemBinding implements ViewBinding {
     this.likeCountTextView = likeCountTextView;
     this.likeImageView = likeImageView;
     this.txtContentNews = txtContentNews;
+    this.uriTextView = uriTextView;
     this.usernameTextView = usernameTextView;
   }
 
@@ -150,6 +154,12 @@ public final class LayoutListItemBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.uriTextView;
+      TextView uriTextView = ViewBindings.findChildViewById(rootView, id);
+      if (uriTextView == null) {
+        break missingId;
+      }
+
       id = R.id.usernameTextView;
       TextView usernameTextView = ViewBindings.findChildViewById(rootView, id);
       if (usernameTextView == null) {
@@ -158,7 +168,7 @@ public final class LayoutListItemBinding implements ViewBinding {
 
       return new LayoutListItemBinding((LinearLayout) rootView, avatarImageView,
           commentCountTextView, commentImageView, emailPhuTextView, emailTextView,
-          imageContentImageView, likeCountTextView, likeImageView, txtContentNews,
+          imageContentImageView, likeCountTextView, likeImageView, txtContentNews, uriTextView,
           usernameTextView);
     }
     String missingId = rootView.getResources().getResourceName(id);

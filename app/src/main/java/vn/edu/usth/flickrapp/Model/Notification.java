@@ -7,13 +7,24 @@ public class Notification {
     private String emailPhu;
     private int otherImageResId;
     private String nameEmailPhu;
+    private String Uri;
 
-    public Notification(int avatarResId, int otherImageResId, String content, String emailChu, String emailPhu) {
+    public Notification(int avatarResId, int otherImageResId, String content, String emailChu, String emailPhu, String Uri) {
         this.avatarResId = avatarResId;
         this.otherImageResId = otherImageResId;
         this.content = content;
         this.email = emailChu;
         this.emailPhu = emailPhu;
+        this.Uri = Uri;
+    }
+
+    public String getUri() {
+        return Uri;
+    }
+
+
+    public void setUri(String Uri) {
+        this.content = Uri;
     }
 
     public int getAvatarResId() {

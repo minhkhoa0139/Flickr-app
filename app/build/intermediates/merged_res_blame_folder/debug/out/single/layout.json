@@ -28,12 +28,12 @@
         "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-52:\\layout\\login_activity.xml"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-mergeDebugResources-49:/layout/layout_image_profile.xml",
-        "source": "vn.edu.usth.flickrapp-main-52:/layout/layout_image_profile.xml"
-    },
-    {
         "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-mergeDebugResources-49:\\layout\\activity_main.xml",
         "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-52:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "vn.edu.usth.flickrapp-mergeDebugResources-49:/layout/layout_notifications.xml",
+        "source": "vn.edu.usth.flickrapp-main-52:/layout/layout_notifications.xml"
     },
     {
         "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-mergeDebugResources-49:\\layout\\fragment_notification.xml",
@@ -64,6 +64,10 @@
         "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-52:\\layout\\fragment_albums.xml"
     },
     {
+        "merged": "vn.edu.usth.flickrapp-mergeDebugResources-49:/layout/profile.xml",
+        "source": "vn.edu.usth.flickrapp-main-52:/layout/profile.xml"
+    },
+    {
         "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-mergeDebugResources-49:\\layout\\layout_comment.xml",
         "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-52:\\layout\\layout_comment.xml"
     },
@@ -78,6 +82,10 @@
     {
         "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-mergeDebugResources-49:\\layout\\fragment_cam.xml",
         "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-52:\\layout\\fragment_cam.xml"
+    },
+    {
+        "merged": "vn.edu.usth.flickrapp-mergeDebugResources-49:/layout/layout_list_item.xml",
+        "source": "vn.edu.usth.flickrapp-main-52:/layout/layout_list_item.xml"
     },
     {
         "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-mergeDebugResources-49:\\layout\\sign_up_activity.xml",

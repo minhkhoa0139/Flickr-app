@@ -42,6 +42,7 @@ drawable ic_notifications_black_24dp
 drawable ic_option
 drawable ic_search_black_24dp
 drawable ic_share
+drawable ic_signout
 drawable logo
 drawable my_button_bg
 drawable outline_camera_alt_24
@@ -71,6 +72,10 @@ id editText
 id emailPhuTextView
 id emailTextView
 id errorMessage
+id errorMessageBirthday
+id errorMessageEmail
+id errorMessageFirstName
+id errorMessageLastName
 id errorMessagePass
 id icon_image
 id imageContentImageView
@@ -78,6 +83,7 @@ id imageTabProfile
 id imageView
 id imageView4
 id imageViewDetail
+id layout_notification
 id likeCountDetailTextView
 id likeCountTextView
 id likeImageView
@@ -123,6 +129,7 @@ id txtPassword
 id txtProfile1
 id txtProfile2
 id txtSearch
+id uriTextView
 id usernameTextView
 id viewPagerHome
 id view_pager

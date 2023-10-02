@@ -1,5 +1,6 @@
 package vn.edu.usth.flickrapp.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -8,14 +9,17 @@ import androidx.viewpager2.widget.ViewPager2;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
 import vn.edu.usth.flickrapp.Adapter.ViewPager_Profile_Adapter;
+import vn.edu.usth.flickrapp.Model.Notification;
 import vn.edu.usth.flickrapp.Model.User;
 import vn.edu.usth.flickrapp.R;
+import vn.edu.usth.flickrapp.WelcomeActivity;
 
 public class ProfileFragment extends Fragment {
     private static User user;
@@ -29,6 +33,16 @@ public class ProfileFragment extends Fragment {
         ViewPager2 viewPager = v.findViewById(R.id.view_pagerProfile);
         ViewPager_Profile_Adapter pagerAdapter = new ViewPager_Profile_Adapter(getActivity(), user);
         viewPager.setAdapter(pagerAdapter);
+
+        ImageView btnSignOut = v.findViewById(R.id.button7);
+        btnSignOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), WelcomeActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK |Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+            }
+        });
 
         TabLayout tabLayout = v.findViewById(R.id.tab_layout);
         new TabLayoutMediator(tabLayout, viewPager,

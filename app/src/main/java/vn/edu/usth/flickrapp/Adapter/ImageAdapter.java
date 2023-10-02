@@ -56,6 +56,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
         holder.commentCountTextView.setText(obj.getCommentCount());
         holder.emailTextView.setText(obj.getEmail());
         holder.emailPhuTextView.setText(obj.getEmailPhu());
+        holder.uriTextView.setText(obj.getUri());
 
         holder.imageView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,7 +81,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
         TextView txtContentNews;
         TextView likeCountTextView;
         TextView commentCountTextView;
-        TextView emailTextView, emailPhuTextView;
+        TextView emailTextView, emailPhuTextView, uriTextView;
         private boolean isLiked = false;
 
         public ImageViewHolder(View itemView) {
@@ -93,6 +94,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
             commentCountTextView = itemView.findViewById(R.id.commentCountTextView);
             emailTextView = itemView.findViewById(R.id.emailTextView);
             emailPhuTextView = itemView.findViewById(R.id.emailPhuTextView);
+            uriTextView = itemView.findViewById(R.id.uriTextView);
 
             FirebaseDatabase database = FirebaseDatabase.getInstance();
             DatabaseReference notificationRef = database.getReference("notification");
@@ -109,7 +111,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
                         likeCountTextView.setText(String.valueOf(likeCount));
                         isLiked = true;
 
-                        Notification item = new Notification(R.drawable.ic_ava, R.drawable.ic_liked, "Đã like ảnh của bạn", emailTextView.getText().toString(), emailPhuTextView.getText().toString());
+                        Notification item = new Notification(R.drawable.ic_ava, R.drawable.ic_liked, "Đã like ảnh của bạn", emailTextView.getText().toString(), emailPhuTextView.getText().toString(), uriTextView.getText().toString());
                         notificationRef.push().setValue(item);
                     } else {
                         likeImageView.setImageResource(R.drawable.ic_like);

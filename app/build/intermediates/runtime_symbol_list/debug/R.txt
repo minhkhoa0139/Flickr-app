@@ -3050,6 +3050,7 @@ int drawable ic_option 0x7f0700c1
 int drawable ic_search_black_24 0x7f0700c2
 int drawable ic_search_black_24dp 0x7f0700c3
 int drawable ic_share 0x7f0700c4
+int drawable ic_signout 0x7f070115
 int drawable logo 0x7f0700c5
 int drawable m3_appbar_background 0x7f0700c6
 int drawable m3_avd_hide_password 0x7f0700c7
@@ -3335,6 +3336,10 @@ int id endToStart 0x7f0800c9
 int id enterAlways 0x7f0800ca
 int id enterAlwaysCollapsed 0x7f0800cb
 int id errorMessage 0x7f0800cc
+int id errorMessageBirthday 0x7f08024e
+int id errorMessageEmail 0x7f08024f
+int id errorMessageFirstName 0x7f080250
+int id errorMessageLastName 0x7f080251
 int id errorMessagePass 0x7f0800cd
 int id exitUntilCollapsed 0x7f0800ce
 int id expand_activities_button 0x7f0800cf
@@ -3396,6 +3401,7 @@ int id jumpToEnd 0x7f080105
 int id jumpToStart 0x7f080106
 int id labeled 0x7f080107
 int id layout 0x7f080108
+int id layout_notification 0x7f080252
 int id left 0x7f080109
 int id leftToRight 0x7f08010a
 int id legacy 0x7f08010b
@@ -3694,6 +3700,7 @@ int id unchecked 0x7f08022c
 int id uniform 0x7f08022d
 int id unlabeled 0x7f08022e
 int id up 0x7f08022f
+int id uriTextView 0x7f080253
 int id useLogo 0x7f080230
 int id usernameTextView 0x7f080231
 int id vertical_only 0x7f080232

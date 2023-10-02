@@ -82,7 +82,7 @@ public class PhotoDetailActivity extends AppCompatActivity {
                                 commentEditText.setText("");
                                 FirebaseDatabase database = FirebaseDatabase.getInstance();
                                 DatabaseReference notificationRef = database.getReference("notification");
-                                Notification item = new Notification(R.drawable.ic_ava, R.drawable.ic_liked, "Đã comment ảnh của bạn", user.email, image.getEmail());
+                                Notification item = new Notification(R.drawable.ic_ava, R.drawable.ic_liked, "Đã comment ảnh của bạn", user.email, image.getEmail(), image.getUri());
                                 notificationRef.push().setValue(item);
                             }
                             else
