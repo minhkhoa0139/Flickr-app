@@ -2,6 +2,7 @@ package vn.edu.usth.flickrapp.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
 
 import java.io.Serializable;
 import java.util.List;
@@ -48,6 +51,9 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
         holder.avatarImageView.setImageResource( notification.getAvatarResId());
         holder.notificationText.setText(notification.getContent());
         holder.otherImageView.setImageResource(notification.getOtherImageResId());
+
+        if(!TextUtils.isEmpty(user.avatar)) Glide.with(context).load(user.avatar).into(holder.avatarImageView);
+        Glide.with(context).load(obj.getUri()).into(holder.otherImageView);
 
         holder.layout_notification.setOnClickListener(new View.OnClickListener() {
             @Override

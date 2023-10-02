@@ -52,7 +52,8 @@ public class SearchFragment extends Fragment {
                         String likeCount = getValue("likeCount", snapshot);
                         String commentCount = getValue("commentCount", snapshot);
                         String content = getValue("content", snapshot);
-                        imgLst.add(new Image(user.email, uri, likeCount, commentCount, content, "", email));
+                        String type = getValue("type", snapshot);
+                        if(type.equals("Public")) imgLst.add(new Image(user.email, uri, likeCount, commentCount, content, "", email, type));
                     }
                 }
                 ImageProfileAdapter adapter = new ImageProfileAdapter(getContext(), imgLst, user);
@@ -85,7 +86,8 @@ public class SearchFragment extends Fragment {
                                 String likeCount = getValue("likeCount", snapshot);
                                 String commentCount = getValue("commentCount", snapshot);
                                 String content = getValue("content", snapshot);
-                                imgLst.add(new Image(user.email, uri, likeCount, commentCount, content, "", email));
+                                String type = getValue("type", snapshot);
+                                if(type.equals("Public")) imgLst.add(new Image(user.email, uri, likeCount, commentCount, content, "", email, type));
                             }
                         }
                         ImageProfileAdapter adapter = new ImageProfileAdapter(getContext(), imgLst, user);

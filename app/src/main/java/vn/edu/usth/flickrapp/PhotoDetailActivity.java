@@ -38,9 +38,11 @@ public class PhotoDetailActivity extends AppCompatActivity {
     private Image image;
     private User user;
     ImageView imageView;
+    ImageView likeImageViewDetail;
     EditText commentEditText;
     TextView likeCountTextView, commentCountTextView;
     Button sendButton;
+    Boolean isLiked = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,6 +55,7 @@ public class PhotoDetailActivity extends AppCompatActivity {
         commentEditText = findViewById(R.id.commentEditText);
         likeCountTextView = findViewById(R.id.likeCountDetailTextView);
         commentCountTextView = findViewById(R.id.commentCountDetailTextView);
+        likeImageViewDetail = findViewById(R.id.likeImageViewDetail);
 
         Glide.with(this).load(image.getUri()).into(imageView);
         likeCountTextView.setText(image.getLikeCount());
@@ -60,7 +63,45 @@ public class PhotoDetailActivity extends AppCompatActivity {
         reloadComment();
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference reactionRef = database.getReference("reaction");
         DatabaseReference commentRef = database.getReference("comment");
+
+        reactionRef.orderByChild("uri").equalTo(image.getUri()).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                long count = 0;
+                for (DataSnapshot userSnapshot : dataSnapshot.getChildren()) {
+                    String email = userSnapshot.child("email").getValue(String.class);
+                    String txt_liked = userSnapshot.child("liked").getValue(String.class);
+                    if (email != null && email.equals(user.email)) {
+                        if(txt_liked == null || txt_liked.equals("1")) isLiked = true;
+                    }
+                    if(txt_liked == null || txt_liked.equals("1")) count++;
+                }
+
+                likeCountTextView.setText(String.valueOf(count));
+                if(isLiked) Glide.with(getBaseContext()).load(R.drawable.ic_liked).into(likeImageViewDetail);
+                else Glide.with(getBaseContext()).load(R.drawable.ic_like).into(likeImageViewDetail);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                // Xử lý lỗi nếu có
+            }
+        });
+
+        commentRef.orderByChild("linkUri").equalTo(image.getUri()).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                long count = dataSnapshot.getChildrenCount();
+                commentCountTextView.setText(String.valueOf(count));
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
+
         sendButton = findViewById(R.id.sendButton);
         sendButton.setOnClickListener(new View.OnClickListener() {
             @Override

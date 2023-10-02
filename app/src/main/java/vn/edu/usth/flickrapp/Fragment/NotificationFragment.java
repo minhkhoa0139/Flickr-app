@@ -56,8 +56,9 @@ public class NotificationFragment extends Fragment {
                                     String likeCount = getValue("likeCount", snapshot);
                                     String commentCount = getValue("commentCount", snapshot);
                                     String content = getValue("content", snapshot);
+                                    String type = getValue("type", snapshot);
 
-                                    Image item = new Image(user.email, uri, likeCount, commentCount, content, "", email);
+                                    Image item = new Image(user.email, uri, likeCount, commentCount, content, "", email, type);
                                     lstImage.add(item);
                                 }
                                 notifications.add(new Notification(R.drawable.ic_ava, R.drawable.ic_like, getValue("content", userSnapshot),"", "", uri_noti));

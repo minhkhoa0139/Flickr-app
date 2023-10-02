@@ -20,6 +20,24 @@
         android:hint="Nhập nội dung ảnh"
         android:id="@+id/ContentImage"/>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/checkboxType"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Private"
+            android:textSize="18sp"/>
+    </LinearLayout>
+
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

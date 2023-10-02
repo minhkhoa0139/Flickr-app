@@ -10,12 +10,13 @@ public class Image implements Serializable {
     private String commentCount;
     private String content;
     private String name;
+    private String type;
 
     // Constructors
     public Image() {
     }
 
-    public Image(String email, String uri, String likeCount, String commentCount, String content, String name, String emailPhu) {
+    public Image(String email, String uri, String likeCount, String commentCount, String content, String name, String emailPhu, String Type) {
         this.email = email;
         this.uri = uri;
         this.likeCount = likeCount;
@@ -23,6 +24,7 @@ public class Image implements Serializable {
         this.content = content;
         this.name = name;
         this.emailPhu = emailPhu;
+        this.type = Type;
     }
 
     // Getters và Setters
@@ -33,6 +35,13 @@ public class Image implements Serializable {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public String getType() { return type; }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     public String getEmailPhu() {
         return emailPhu;
     }

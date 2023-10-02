@@ -94,6 +94,7 @@ public class NewsFragment extends Fragment {
                     String likeCount = getValue("likeCount", snapshot);
                     String commentCount = getValue("commentCount", snapshot);
                     String content = getValue("content", snapshot);
+                    String type = getValue("type", snapshot);
 
                     FirebaseDatabase database = FirebaseDatabase.getInstance();
                     DatabaseReference usersRef = database.getReference("users");
@@ -103,8 +104,8 @@ public class NewsFragment extends Fragment {
                             for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                                 String firstName = getValue("firstName", snapshot);
                                 String lastName = getValue("lastName", snapshot);
-                                Image item = new Image(user.email, uri, likeCount, commentCount, content, firstName + " " + lastName, email);
-                                lstImage.add(item);
+                                Image item = new Image(user.email, uri, likeCount, commentCount, content, firstName + " " + lastName, email, type);
+                                if(type.equals("Public")) lstImage.add(item);
                             }
                             imageAdapter.notifyDataSetChanged();
                         }

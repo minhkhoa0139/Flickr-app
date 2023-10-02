@@ -4,9 +4,28 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import vn.edu.usth.flickrapp.Adapter.ImageProfileAdapter;
+import vn.edu.usth.flickrapp.Model.Image;
+import vn.edu.usth.flickrapp.Model.User;
 import vn.edu.usth.flickrapp.R;
 
 /**
@@ -24,9 +43,13 @@ public class AlbumsFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private User user;
+
+    public AlbumsFragment(User user) {
+        this.user = user;
+    }
 
     public AlbumsFragment() {
-        // Required empty public constructor
     }
 
     /**
@@ -57,9 +80,63 @@ public class AlbumsFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_albums, container, false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View v = inflater.inflate(R.layout.fragment_albums, container, false);
+
+        RecyclerView recyclerView = v.findViewById(R.id.recyclerViewAlbum);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        List<Image> imgLst = new ArrayList<>();
+
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference imagesRef = database.getReference("images_url");
+        DatabaseReference reactionRef = database.getReference("reaction");
+
+        imagesRef.orderByChild("email").equalTo(user.email).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                        String uri = getValue("uri", snapshot);
+                        String email = getValue("email", snapshot);
+                        String likeCount = getValue("likeCount", snapshot);
+                        String commentCount = getValue("commentCount", snapshot);
+                        String content = getValue("content", snapshot);
+                        String type = getValue("type", snapshot);
+
+                        reactionRef.orderByChild("uri").equalTo(uri).addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                for (DataSnapshot userSnapshot : dataSnapshot.getChildren()) {
+                                    String email = userSnapshot.child("email").getValue(String.class);
+                                    String txt_liked = userSnapshot.child("liked").getValue(String.class);
+                                    Toast.makeText(getActivity(), txt_liked, Toast.LENGTH_SHORT).show();
+                                    if (email != null && email.equals(user.email)) {
+                                        imgLst.add(new Image(user.email, uri, likeCount, commentCount, content, "", email, type));
+                                        ImageProfileAdapter adapter = new ImageProfileAdapter(getContext(), imgLst, user);
+                                        recyclerView.setAdapter(adapter);
+                                    }
+                                }
+                            }
+
+                            @Override
+                            public void onCancelled(DatabaseError databaseError) {
+                                // Xử lý lỗi nếu có
+                            }
+                        });
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
+
+        return v;
+    }
+
+    public String getValue(String path, DataSnapshot userSnapshot)
+    {
+        return userSnapshot.child(path).getValue(String.class);
     }
 }

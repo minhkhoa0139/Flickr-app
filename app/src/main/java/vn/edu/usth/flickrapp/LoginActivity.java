@@ -84,9 +84,9 @@ public class LoginActivity extends AppCompatActivity {
                                 for (DataSnapshot userSnapshot : dataSnapshot.getChildren()) {
                                     String storedPassword = getValue("password", userSnapshot);
                                     if (storedPassword.equals(password)) {
-                                        User user = new User(getValue("firstName", userSnapshot),getValue("lastName", userSnapshot), getValue("birthday", userSnapshot), getValue("email", userSnapshot),getValue("password", userSnapshot));
+                                        User user = new User(getValue("firstName", userSnapshot),getValue("lastName", userSnapshot), getValue("birthday", userSnapshot), getValue("email", userSnapshot),getValue("password", userSnapshot), getValue("avatar", userSnapshot));
                                         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK |Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                         intent.putExtra("user", user);
                                         startActivity(intent);
                                         Toast.makeText(getApplicationContext(), "Đăng nhập thành công", Toast.LENGTH_SHORT).show();

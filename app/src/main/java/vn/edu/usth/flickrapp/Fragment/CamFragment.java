@@ -17,6 +17,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -54,6 +55,7 @@ public class CamFragment extends Fragment {
     Button btnChoose, btnUpload, btnCamera;
     ImageView imageView;
     EditText ContentImage;
+    CheckBox checkboxType;
     private static final int SELECT_PICTURE = 1;
     private static final int REQUEST_IMAGE_CAPTURE = 101;
     private static User user;
@@ -65,6 +67,7 @@ public class CamFragment extends Fragment {
         btnCamera = v.findViewById(R.id.btnCamera);
         imageView = v.findViewById(R.id.imageView);
         ContentImage = v.findViewById(R.id.ContentImage);
+        checkboxType = v.findViewById(R.id.checkboxType);
 
         btnChoose.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -136,6 +139,7 @@ public class CamFragment extends Fragment {
                                             image.setLikeCount("0");
                                             image.setCommentCount("0");
                                             image.setContent(ContentImage.getText().toString());
+                                            image.setType(checkboxType.isChecked() ? "Private" : "Public");
                                             databaseReference.push().setValue(image);
 
                                             Glide.with(getContext())

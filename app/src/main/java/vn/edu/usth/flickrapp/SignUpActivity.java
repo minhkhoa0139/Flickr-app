@@ -61,7 +61,7 @@ public class SignUpActivity extends AppCompatActivity {
                 String birthday = txtBirthDay.getText().toString();
                 String email = txtEmail.getText().toString();
                 String password = txtPassword.getText().toString();
-                User user = new User(firstName, lastName, birthday, email, password);
+                User user = new User(firstName, lastName, birthday, email, password, "");
 
                 TextView errorMessageFirstName = findViewById(R.id.errorMessageFirstName);
                 TextView errorMessageLastName = findViewById(R.id.errorMessageLastName);

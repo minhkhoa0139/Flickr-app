@@ -29,7 +29,7 @@ public class ViewPager_Profile_Adapter extends FragmentStateAdapter {
             case 1:
                 return new publicFragment(true, user);
             case 2:
-                return new AlbumsFragment();
+                return new AlbumsFragment(user);
             case 3:
                 return new groupsFragment();
             case 4:

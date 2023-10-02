@@ -88,7 +88,8 @@ public class publicFragment extends Fragment {
                         String likeCount = getValue("likeCount", snapshot);
                         String commentCount = getValue("commentCount", snapshot);
                         String content = getValue("content", snapshot);
-                        imgLst.add(new Image(user.email, uri, likeCount, commentCount, content, "", email));
+                        String type = getValue("type", snapshot);
+                        if((type.equals("Public") && isPublic) || (type.equals("Private") && !isPublic)) imgLst.add(new Image(user.email, uri, likeCount, commentCount, content, "", email, type));
                     }
                 }
                 ImageProfileAdapter adapter = new ImageProfileAdapter(getContext(), imgLst, user);
