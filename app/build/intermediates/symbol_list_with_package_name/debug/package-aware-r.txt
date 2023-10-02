@@ -3381,6 +3381,7 @@ id ignore
 id ignoreRequest
 id image
 id imageContentImageView
+id imageTabProfile
 id imageView
 id imageView4
 id imageViewDetail
@@ -3533,9 +3534,10 @@ id progress_horizontal
 id radio
 id ratio
 id rectangles
-id recycleView
 id recyclerView
 id recyclerViewNotifications
+id recyclerViewProfile
+id recyclerViewSearch
 id register
 id report_drawn
 id reverseSawtooth
@@ -3556,7 +3558,6 @@ id scrollIndicatorDown
 id scrollIndicatorUp
 id scrollView
 id scrollable
-id searchView
 id search_badge
 id search_bar
 id search_bar_text_view
@@ -3687,6 +3688,9 @@ id txtLastName
 id txtLoginEmail
 id txtLoginPassword
 id txtPassword
+id txtProfile1
+id txtProfile2
+id txtSearch
 id unchecked
 id uniform
 id unlabeled
@@ -3858,6 +3862,7 @@ layout fragment_notification
 layout fragment_public
 layout fragment_stats
 layout layout_comment
+layout layout_image_profile
 layout layout_list_item
 layout layout_notifications
 layout login_activity

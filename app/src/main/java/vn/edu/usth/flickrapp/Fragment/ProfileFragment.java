@@ -27,7 +27,7 @@ public class ProfileFragment extends Fragment {
         textNameProfile.setText(user.firstName+" "+user.lastName);
 
         ViewPager2 viewPager = v.findViewById(R.id.view_pagerProfile);
-        ViewPager_Profile_Adapter pagerAdapter = new ViewPager_Profile_Adapter(getActivity());
+        ViewPager_Profile_Adapter pagerAdapter = new ViewPager_Profile_Adapter(getActivity(), user);
         viewPager.setAdapter(pagerAdapter);
 
         TabLayout tabLayout = v.findViewById(R.id.tab_layout);

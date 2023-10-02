@@ -16,6 +16,10 @@
         "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-52:\\drawable\\baseline_check_circle_24.xml"
     },
     {
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-50:\\layout_layout_image_profile.xml.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-52:\\layout\\layout_image_profile.xml"
+    },
+    {
         "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-50:\\drawable_ic_option.png.flat",
         "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-52:\\drawable\\ic_option.png"
     },
@@ -24,12 +28,12 @@
         "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-52:\\layout\\sign_up_activity.xml"
     },
     {
-        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-50:\\drawable_ic_ava.png.flat",
-        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-52:\\drawable\\ic_ava.png"
-    },
-    {
         "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-50:\\drawable_ic_camera.png.flat",
         "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-52:\\drawable\\ic_camera.png"
+    },
+    {
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-50:\\drawable_ic_ava.png.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-52:\\drawable\\ic_ava.png"
     },
     {
         "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-50:\\drawable_logo.png.flat",
@@ -74,10 +78,6 @@
     {
         "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-50:\\drawable_ic_autouploadr.png.flat",
         "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-52:\\drawable\\ic_autouploadr.png"
-    },
-    {
-        "merged": "vn.edu.usth.flickrapp-merged_res-50:/layout_activity_photo_detail.xml.flat",
-        "source": "vn.edu.usth.flickrapp-main-52:/layout/activity_photo_detail.xml"
     },
     {
         "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-50:\\drawable_ic_home_black_24dp.xml.flat",
@@ -298,5 +298,9 @@
     {
         "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-50:\\menu_menu_bottom_navigation.xml.flat",
         "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-52:\\menu\\menu_bottom_navigation.xml"
+    },
+    {
+        "merged": "vn.edu.usth.flickrapp-merged_res-50:/layout_layout_image_profile.xml.flat",
+        "source": "vn.edu.usth.flickrapp-main-52:/layout/layout_image_profile.xml"
     }
 ]

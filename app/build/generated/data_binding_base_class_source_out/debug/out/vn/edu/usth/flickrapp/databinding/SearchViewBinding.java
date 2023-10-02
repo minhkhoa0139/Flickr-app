@@ -4,13 +4,13 @@ package vn.edu.usth.flickrapp.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.RelativeLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import com.google.android.material.tabs.TabLayout;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -21,16 +21,16 @@ public final class SearchViewBinding implements ViewBinding {
   private final RelativeLayout rootView;
 
   @NonNull
-  public final RecyclerView recycleView;
+  public final RecyclerView recyclerViewSearch;
 
   @NonNull
-  public final TabLayout tabLayout;
+  public final EditText txtSearch;
 
-  private SearchViewBinding(@NonNull RelativeLayout rootView, @NonNull RecyclerView recycleView,
-      @NonNull TabLayout tabLayout) {
+  private SearchViewBinding(@NonNull RelativeLayout rootView,
+      @NonNull RecyclerView recyclerViewSearch, @NonNull EditText txtSearch) {
     this.rootView = rootView;
-    this.recycleView = recycleView;
-    this.tabLayout = tabLayout;
+    this.recyclerViewSearch = recyclerViewSearch;
+    this.txtSearch = txtSearch;
   }
 
   @Override
@@ -60,19 +60,19 @@ public final class SearchViewBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.recycleView;
-      RecyclerView recycleView = ViewBindings.findChildViewById(rootView, id);
-      if (recycleView == null) {
+      id = R.id.recyclerViewSearch;
+      RecyclerView recyclerViewSearch = ViewBindings.findChildViewById(rootView, id);
+      if (recyclerViewSearch == null) {
         break missingId;
       }
 
-      id = R.id.tab_layout;
-      TabLayout tabLayout = ViewBindings.findChildViewById(rootView, id);
-      if (tabLayout == null) {
+      id = R.id.txtSearch;
+      EditText txtSearch = ViewBindings.findChildViewById(rootView, id);
+      if (txtSearch == null) {
         break missingId;
       }
 
-      return new SearchViewBinding((RelativeLayout) rootView, recycleView, tabLayout);
+      return new SearchViewBinding((RelativeLayout) rootView, recyclerViewSearch, txtSearch);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

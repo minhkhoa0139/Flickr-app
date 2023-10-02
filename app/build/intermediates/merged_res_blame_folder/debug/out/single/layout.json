@@ -4,6 +4,10 @@
         "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-52:\\layout\\fragment_groups.xml"
     },
     {
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-mergeDebugResources-49:\\layout\\layout_image_profile.xml",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-52:\\layout\\layout_image_profile.xml"
+    },
+    {
         "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-mergeDebugResources-49:\\layout\\fragment_stats.xml",
         "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-52:\\layout\\fragment_stats.xml"
     },
@@ -22,6 +26,10 @@
     {
         "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-mergeDebugResources-49:\\layout\\login_activity.xml",
         "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-52:\\layout\\login_activity.xml"
+    },
+    {
+        "merged": "vn.edu.usth.flickrapp-mergeDebugResources-49:/layout/layout_image_profile.xml",
+        "source": "vn.edu.usth.flickrapp-main-52:/layout/layout_image_profile.xml"
     },
     {
         "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-mergeDebugResources-49:\\layout\\activity_main.xml",
@@ -50,10 +58,6 @@
     {
         "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-mergeDebugResources-49:\\layout\\dialog_input.xml",
         "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-52:\\layout\\dialog_input.xml"
-    },
-    {
-        "merged": "vn.edu.usth.flickrapp-mergeDebugResources-49:/layout/activity_photo_detail.xml",
-        "source": "vn.edu.usth.flickrapp-main-52:/layout/activity_photo_detail.xml"
     },
     {
         "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-mergeDebugResources-49:\\layout\\fragment_albums.xml",

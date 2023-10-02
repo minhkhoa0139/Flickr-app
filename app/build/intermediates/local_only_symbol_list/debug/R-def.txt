@@ -74,6 +74,7 @@ id errorMessage
 id errorMessagePass
 id icon_image
 id imageContentImageView
+id imageTabProfile
 id imageView
 id imageView4
 id imageViewDetail
@@ -97,11 +98,11 @@ id navigation_home
 id navigation_notifications
 id notificationText
 id otherImageView
-id recycleView
 id recyclerView
 id recyclerViewNotifications
+id recyclerViewProfile
+id recyclerViewSearch
 id register
-id searchView
 id sendButton
 id signup_button
 id swipeRefreshLayout
@@ -119,6 +120,9 @@ id txtLastName
 id txtLoginEmail
 id txtLoginPassword
 id txtPassword
+id txtProfile1
+id txtProfile2
+id txtSearch
 id usernameTextView
 id viewPagerHome
 id view_pager
@@ -135,6 +139,7 @@ layout fragment_notification
 layout fragment_public
 layout fragment_stats
 layout layout_comment
+layout layout_image_profile
 layout layout_list_item
 layout layout_notifications
 layout login_activity

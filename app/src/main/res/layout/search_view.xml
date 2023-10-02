@@ -7,95 +7,18 @@
     android:background="@color/white"
     tools:context="Fragment.SearchFragment">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp">
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/baseline_search_24"
-            android:layout_gravity="center_vertical"
-            android:hint="Search Flick"/>
-
-    </LinearLayout>
-
-    <com.google.android.material.tabs.TabLayout
+    <EditText
+        android:id="@+id/txtSearch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:id="@+id/tab_layout">
+        android:drawableLeft="@drawable/baseline_search_24"
+        android:layout_gravity="center_vertical"
+        android:hint="Search Flick"/>
 
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Photos"/>
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="People"/>
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Groups"/>
-
-    </com.google.android.material.tabs.TabLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycleView"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/searchView" />
-
-    </LinearLayout>
-
-    <LinearLayout
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewSearch"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="100dp"
-        android:orientation="vertical">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:text="home"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            android:gravity="center_vertical"
-            android:layout_marginLeft="15dp"
-            android:drawableRight="@drawable/baseline_clear_24"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:text="house"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            android:gravity="center_vertical"
-            android:layout_marginLeft="15dp"
-            android:drawableRight="@drawable/baseline_clear_24"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:text="game"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            android:gravity="center_vertical"
-            android:layout_marginLeft="15dp"
-            android:drawableRight="@drawable/baseline_clear_24"/>
-
-    </LinearLayout>
+        android:layout_below="@id/txtSearch" />
 
 </RelativeLayout>

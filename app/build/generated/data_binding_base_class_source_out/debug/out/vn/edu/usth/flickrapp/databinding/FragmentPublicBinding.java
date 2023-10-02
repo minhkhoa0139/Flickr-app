@@ -6,8 +6,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import java.lang.NullPointerException;
@@ -22,9 +24,23 @@ public final class FragmentPublicBinding implements ViewBinding {
   @NonNull
   public final ImageView imageView;
 
-  private FragmentPublicBinding(@NonNull LinearLayout rootView, @NonNull ImageView imageView) {
+  @NonNull
+  public final RecyclerView recyclerViewProfile;
+
+  @NonNull
+  public final TextView txtProfile1;
+
+  @NonNull
+  public final TextView txtProfile2;
+
+  private FragmentPublicBinding(@NonNull LinearLayout rootView, @NonNull ImageView imageView,
+      @NonNull RecyclerView recyclerViewProfile, @NonNull TextView txtProfile1,
+      @NonNull TextView txtProfile2) {
     this.rootView = rootView;
     this.imageView = imageView;
+    this.recyclerViewProfile = recyclerViewProfile;
+    this.txtProfile1 = txtProfile1;
+    this.txtProfile2 = txtProfile2;
   }
 
   @Override
@@ -60,7 +76,26 @@ public final class FragmentPublicBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentPublicBinding((LinearLayout) rootView, imageView);
+      id = R.id.recyclerViewProfile;
+      RecyclerView recyclerViewProfile = ViewBindings.findChildViewById(rootView, id);
+      if (recyclerViewProfile == null) {
+        break missingId;
+      }
+
+      id = R.id.txtProfile1;
+      TextView txtProfile1 = ViewBindings.findChildViewById(rootView, id);
+      if (txtProfile1 == null) {
+        break missingId;
+      }
+
+      id = R.id.txtProfile2;
+      TextView txtProfile2 = ViewBindings.findChildViewById(rootView, id);
+      if (txtProfile2 == null) {
+        break missingId;
+      }
+
+      return new FragmentPublicBinding((LinearLayout) rootView, imageView, recyclerViewProfile,
+          txtProfile1, txtProfile2);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

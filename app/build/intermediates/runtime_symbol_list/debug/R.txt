@@ -3380,6 +3380,7 @@ int id ignore 0x7f0800f6
 int id ignoreRequest 0x7f0800f7
 int id image 0x7f0800f8
 int id imageContentImageView 0x7f0800f9
+int id imageTabProfile 0x7f080248
 int id imageView 0x7f0800fa
 int id imageView4 0x7f0800fb
 int id imageViewDetail 0x7f0800fc
@@ -3532,9 +3533,10 @@ int id progress_horizontal 0x7f08018e
 int id radio 0x7f08018f
 int id ratio 0x7f080190
 int id rectangles 0x7f080191
-int id recycleView 0x7f080192
 int id recyclerView 0x7f080193
 int id recyclerViewNotifications 0x7f080194
+int id recyclerViewProfile 0x7f080249
+int id recyclerViewSearch 0x7f08024c
 int id register 0x7f080195
 int id report_drawn 0x7f080196
 int id reverseSawtooth 0x7f080197
@@ -3555,7 +3557,6 @@ int id scrollIndicatorDown 0x7f0801a5
 int id scrollIndicatorUp 0x7f0801a6
 int id scrollView 0x7f0801a7
 int id scrollable 0x7f0801a8
-int id searchView 0x7f0801a9
 int id search_badge 0x7f0801aa
 int id search_bar 0x7f0801ab
 int id search_bar_text_view 0x7f0801ac
@@ -3686,6 +3687,9 @@ int id txtLastName 0x7f080228
 int id txtLoginEmail 0x7f080229
 int id txtLoginPassword 0x7f08022a
 int id txtPassword 0x7f08022b
+int id txtProfile1 0x7f08024a
+int id txtProfile2 0x7f08024b
+int id txtSearch 0x7f08024d
 int id unchecked 0x7f08022c
 int id uniform 0x7f08022d
 int id unlabeled 0x7f08022e
@@ -3857,6 +3861,7 @@ int layout fragment_notification 0x7f0b0034
 int layout fragment_public 0x7f0b0035
 int layout fragment_stats 0x7f0b0036
 int layout layout_comment 0x7f0b0037
+int layout layout_image_profile 0x7f0b007c
 int layout layout_list_item 0x7f0b0038
 int layout layout_notifications 0x7f0b0039
 int layout login_activity 0x7f0b003a

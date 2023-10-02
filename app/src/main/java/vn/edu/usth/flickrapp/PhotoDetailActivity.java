@@ -31,6 +31,7 @@ import java.util.List;
 import vn.edu.usth.flickrapp.Adapter.CommentAdapter;
 import vn.edu.usth.flickrapp.Model.Comment;
 import vn.edu.usth.flickrapp.Model.Image;
+import vn.edu.usth.flickrapp.Model.Notification;
 import vn.edu.usth.flickrapp.Model.User;
 
 public class PhotoDetailActivity extends AppCompatActivity {
@@ -79,6 +80,10 @@ public class PhotoDetailActivity extends AppCompatActivity {
                             {
                                 reloadComment();
                                 commentEditText.setText("");
+                                FirebaseDatabase database = FirebaseDatabase.getInstance();
+                                DatabaseReference notificationRef = database.getReference("notification");
+                                Notification item = new Notification(R.drawable.ic_ava, R.drawable.ic_liked, "Đã comment ảnh của bạn", user.email, image.getEmail());
+                                notificationRef.push().setValue(item);
                             }
                             else
                             {

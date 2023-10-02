@@ -24,7 +24,7 @@ public class TabLayoutActivity extends AppCompatActivity {
 
         tabLayout = findViewById(R.id.tab_layout);
         viewPager2 = findViewById(R.id.view_pager);
-        myViewPagerAdapter = new ViewPager_Profile_Adapter(this);
+        myViewPagerAdapter = new ViewPager_Profile_Adapter(this, null);
         viewPager2.setAdapter(myViewPagerAdapter);
 
 
