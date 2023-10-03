@@ -51,6 +51,7 @@ public class PhotoDetailActivity extends AppCompatActivity {
 
         image = (Image) getIntent().getSerializableExtra("imageObject");
         user = (User) getIntent().getSerializableExtra("user");
+        String focus = getIntent().getStringExtra("focus");
 
         imageView = findViewById(R.id.imageViewDetail);
         commentEditText = findViewById(R.id.commentEditText);
@@ -136,6 +137,8 @@ public class PhotoDetailActivity extends AppCompatActivity {
                 }
             }
         });
+
+        if(focus == "1") commentEditText.requestFocus();
     }
 
     public void reloadComment()

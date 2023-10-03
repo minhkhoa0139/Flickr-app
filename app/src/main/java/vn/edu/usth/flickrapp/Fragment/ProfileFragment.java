@@ -37,7 +37,6 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -48,8 +47,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import vn.edu.usth.flickrapp.Adapter.ViewPager_Profile_Adapter;
-import vn.edu.usth.flickrapp.Model.Image;
-import vn.edu.usth.flickrapp.Model.Notification;
 import vn.edu.usth.flickrapp.Model.User;
 import vn.edu.usth.flickrapp.R;
 import vn.edu.usth.flickrapp.WelcomeActivity;
@@ -63,7 +60,7 @@ public class ProfileFragment extends Fragment {
     ImageView btnSignOut;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.profile, container, false);
+        View v = inflater.inflate(R.layout.fragment_profile, container, false);
         textNameProfile = v.findViewById(R.id.textNameProfile);
         textNameProfile.setText(user.firstName + " " + user.lastName);
         imageAvatar = v.findViewById(R.id.imageAvatar);

@@ -22,7 +22,7 @@ public final class LayoutListItemBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
-  public final RoundedImageView avatarImageView;
+  public final RoundedImageView avatarImageViewListItem;
 
   @NonNull
   public final ImageView btnShare;
@@ -46,16 +46,16 @@ public final class LayoutListItemBinding implements ViewBinding {
   public final TextView txtContentNews;
 
   @NonNull
-  public final TextView usernameTextView;
+  public final TextView usernameTextViewListItem;
 
   private LayoutListItemBinding(@NonNull LinearLayout rootView,
-      @NonNull RoundedImageView avatarImageView, @NonNull ImageView btnShare,
+      @NonNull RoundedImageView avatarImageViewListItem, @NonNull ImageView btnShare,
       @NonNull TextView commentCountTextView, @NonNull ImageView commentImageView,
       @NonNull ImageView imageContentImageView, @NonNull TextView likeCountTextView,
       @NonNull ImageView likeImageView, @NonNull TextView txtContentNews,
-      @NonNull TextView usernameTextView) {
+      @NonNull TextView usernameTextViewListItem) {
     this.rootView = rootView;
-    this.avatarImageView = avatarImageView;
+    this.avatarImageViewListItem = avatarImageViewListItem;
     this.btnShare = btnShare;
     this.commentCountTextView = commentCountTextView;
     this.commentImageView = commentImageView;
@@ -63,7 +63,7 @@ public final class LayoutListItemBinding implements ViewBinding {
     this.likeCountTextView = likeCountTextView;
     this.likeImageView = likeImageView;
     this.txtContentNews = txtContentNews;
-    this.usernameTextView = usernameTextView;
+    this.usernameTextViewListItem = usernameTextViewListItem;
   }
 
   @Override
@@ -93,9 +93,9 @@ public final class LayoutListItemBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.avatarImageView;
-      RoundedImageView avatarImageView = ViewBindings.findChildViewById(rootView, id);
-      if (avatarImageView == null) {
+      id = R.id.avatarImageViewListItem;
+      RoundedImageView avatarImageViewListItem = ViewBindings.findChildViewById(rootView, id);
+      if (avatarImageViewListItem == null) {
         break missingId;
       }
 
@@ -141,15 +141,15 @@ public final class LayoutListItemBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.usernameTextView;
-      TextView usernameTextView = ViewBindings.findChildViewById(rootView, id);
-      if (usernameTextView == null) {
+      id = R.id.usernameTextViewListItem;
+      TextView usernameTextViewListItem = ViewBindings.findChildViewById(rootView, id);
+      if (usernameTextViewListItem == null) {
         break missingId;
       }
 
-      return new LayoutListItemBinding((LinearLayout) rootView, avatarImageView, btnShare,
+      return new LayoutListItemBinding((LinearLayout) rootView, avatarImageViewListItem, btnShare,
           commentCountTextView, commentImageView, imageContentImageView, likeCountTextView,
-          likeImageView, txtContentNews, usernameTextView);
+          likeImageView, txtContentNews, usernameTextViewListItem);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

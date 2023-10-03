@@ -34,7 +34,7 @@ public class SlideAdapter extends PagerAdapter {
     @NonNull
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
-        View view = View.inflate(container.getContext(), R.layout.slide_item, null);
+        View view = View.inflate(container.getContext(), R.layout.layout_slide_item, null);
 
         TextView titleTextView = view.findViewById(R.id.textView_Title);
         TextView contentTextView = view.findViewById(R.id.textView_Content);

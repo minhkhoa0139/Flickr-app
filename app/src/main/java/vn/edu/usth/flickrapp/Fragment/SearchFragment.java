@@ -8,9 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
@@ -40,7 +37,7 @@ public class SearchFragment extends Fragment {
     List<String> lstHistory;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.search_view, container, false);
+        View v = inflater.inflate(R.layout.fragment_search, container, false);
 
         txtSearch = v.findViewById(R.id.txtSearch);
         recyclerViewHistory = v.findViewById(R.id.recyclerViewHistory);

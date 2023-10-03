@@ -104,7 +104,7 @@ public class NewsFragment extends Fragment {
                             for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                                 String firstName = getValue("firstName", snapshot);
                                 String lastName = getValue("lastName", snapshot);
-                                Image item = new Image(email, uri, likeCount, commentCount, content, firstName + " " + lastName, user.email, type);
+                                Image item = new Image(email, uri, likeCount, commentCount, content, firstName + " " + lastName, "", type);
                                 if(type.equals("Public")) lstImage.add(item);
                             }
                             imageAdapter.notifyDataSetChanged();

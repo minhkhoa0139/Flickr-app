@@ -1,318 +1,342 @@
 [
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/layout_activity_welcome.xml.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/layout/activity_welcome.xml"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\layout_slide_item.xml.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\layout\\slide_item.xml"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/color_custom_color_navigation.xml.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/color/custom_color_navigation.xml"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\drawable_bg.jpg.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\drawable\\bg.jpg"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/drawable_outline_camera_alt_24.xml.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/drawable/outline_camera_alt_24.xml"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\drawable_anhflickr4.jpg.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\drawable\\anhflickr4.jpg"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/drawable_stats.xml.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/drawable/stats.xml"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\drawable_ic_signout.png.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\drawable\\ic_signout.png"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/layout_profile.xml.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/layout/profile.xml"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\layout_activity_photo_detail.xml.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\layout\\activity_photo_detail.xml"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/drawable_baseline_person_outline_24.xml.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/drawable/baseline_person_outline_24.xml"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\layout_fragment_search.xml.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\layout\\fragment_search.xml"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/mipmap-xxhdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\layout_dialog_input.xml.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\layout\\dialog_input.xml"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/drawable_people.xml.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/drawable/people.xml"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\layout_fragment_profile.xml.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\layout\\fragment_profile.xml"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/drawable_baseline_crop_original_24.xml.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/drawable/baseline_crop_original_24.xml"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\layout_fragment_public.xml.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\layout\\fragment_public.xml"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/xml_backup_rules.xml.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/xml/backup_rules.xml"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\mipmap-xxhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/layout_fragment_public.xml.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/layout/fragment_public.xml"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\color_custom_color_navigation.xml.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\color\\custom_color_navigation.xml"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/drawable_ic_cmt.png.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/drawable/ic_cmt.png"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\mipmap-hdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/drawable_baseline_format_align_left_24.xml.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/drawable/baseline_format_align_left_24.xml"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\drawable_baseline_close_24.xml.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\drawable\\baseline_close_24.xml"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/layout_fragment_cam.xml.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/layout/fragment_cam.xml"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\drawable_baseline_crop_original_24.xml.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\drawable\\baseline_crop_original_24.xml"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/mipmap-mdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\drawable_baseline_search_24.xml.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\drawable\\baseline_search_24.xml"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/drawable_baseline_add_circle_outline_24.xml.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/drawable/baseline_add_circle_outline_24.xml"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/drawable_my_button_bg.xml.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/drawable/my_button_bg.xml"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\drawable_ic_ava.png.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\drawable\\ic_ava.png"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/mipmap-xxxhdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\mipmap-hdpi\\ic_launcher.webp"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/layout_activity_news.xml.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/layout/activity_news.xml"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\drawable_baseline_person_outline_24.xml.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\drawable\\baseline_person_outline_24.xml"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/layout_activity_main.xml.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/layout/activity_main.xml"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\layout_activity_welcome.xml.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\layout\\activity_welcome.xml"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/layout_fragment_notification.xml.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/layout/fragment_notification.xml"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\drawable_ic_camera.png.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\drawable\\ic_camera.png"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/mipmap-mdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\layout_profile.xml.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\layout\\profile.xml"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/drawable_ic_home_black_24dp.xml.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/drawable/ic_home_black_24dp.xml"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\drawable_stats.xml.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\drawable\\stats.xml"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/mipmap-hdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\mipmap-mdpi\\ic_launcher.webp"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/layout_layout_comment.xml.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/layout/layout_comment.xml"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\navigation_mobile_navigation2.xml.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\navigation\\mobile_navigation2.xml"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/anim_slide_up.xml.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/anim/slide_up.xml"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\layout_layout_slide_item.xml.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\layout\\layout_slide_item.xml"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/drawable_ic_launcher_foreground.xml.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/drawable/ic_launcher_foreground.xml"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\layout_layout_comment.xml.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\layout\\layout_comment.xml"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/layout_layout_history.xml.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/layout/layout_history.xml"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\layout_activity_login.xml.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\layout\\activity_login.xml"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/drawable_ic_option.png.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/drawable/ic_option.png"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\drawable_ic_like.png.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\drawable\\ic_like.png"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/layout_sign_up_activity.xml.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/layout/sign_up_activity.xml"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\drawable_border.xml.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\drawable\\border.xml"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/navigation_mobile_navigation.xml.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/navigation/mobile_navigation.xml"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\layout_fragment_notification.xml.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\layout\\fragment_notification.xml"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/drawable_baseline_close_24.xml.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/drawable/baseline_close_24.xml"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\navigation_mobile_navigation.xml.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\navigation\\mobile_navigation.xml"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/layout_fragment_groups.xml.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/layout/fragment_groups.xml"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\drawable_ic_home_black_24dp.xml.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\drawable\\ic_home_black_24dp.xml"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/drawable_ic_camera.png.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/drawable/ic_camera.png"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\layout_fragment_groups.xml.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\layout\\fragment_groups.xml"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/mipmap-xxxhdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\layout_search_view.xml.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\layout\\search_view.xml"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/layout_activity_follower.xml.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/layout/activity_follower.xml"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\drawable_ic_dashboard_black_24dp.xml.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\drawable\\ic_dashboard_black_24dp.xml"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/drawable_shape.xml.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/drawable/shape.xml"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\mipmap-xxxhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/drawable_anhflickr1.jpg.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/drawable/anhflickr1.jpg"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\xml\\data_extraction_rules.xml"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/drawable_ic_signout.png.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/drawable/ic_signout.png"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\drawable_baseline_add_circle_outline_24.xml.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\drawable\\baseline_add_circle_outline_24.xml"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/drawable_ic_share.png.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/drawable/ic_share.png"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\layout_layout_notifications.xml.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\layout\\layout_notifications.xml"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/drawable_ic_search_black_24dp.xml.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/drawable/ic_search_black_24dp.xml"
+        "merged": "vn.edu.usth.flickrapp-merged_res-51:/layout_activity_sign_up.xml.flat",
+        "source": "vn.edu.usth.flickrapp-main-53:/layout/activity_sign_up.xml"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/drawable_anhflickr4.jpg.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/drawable/anhflickr4.jpg"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\drawable_outline_camera_alt_24.xml.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\drawable\\outline_camera_alt_24.xml"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/layout_login_activity.xml.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/layout/login_activity.xml"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\drawable_my_button_bg.xml.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\drawable\\my_button_bg.xml"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/menu_menu.xml.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/menu/menu.xml"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\layout\\activity_main.xml"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\mipmap-xhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/drawable_ic_autouploadr.png.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/drawable/ic_autouploadr.png"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\drawable\\ic_launcher_background.xml"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/drawable_baseline_clear_24.xml.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/drawable/baseline_clear_24.xml"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\anim_slide_up.xml.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\anim\\slide_up.xml"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/drawable_ic_liked.png.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/drawable/ic_liked.png"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\layout_layout_image_profile.xml.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\layout\\layout_image_profile.xml"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/layout_layout_list_item.xml.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/layout/layout_list_item.xml"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/drawable_circle_background.xml.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/drawable/circle_background.xml"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\drawable_ic_share.png.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\drawable\\ic_share.png"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/layout_activity_photo_detail.xml.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/layout/activity_photo_detail.xml"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\layout_fragment_cam.xml.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\layout\\fragment_cam.xml"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/drawable_ic_ava.png.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/drawable/ic_ava.png"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\drawable_logo.png.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\drawable\\logo.png"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/drawable_ic_like.png.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/drawable/ic_like.png"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\drawable_ic_autouploadr.png.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\drawable\\ic_autouploadr.png"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/layout_fragment_albums.xml.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/layout/fragment_albums.xml"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\layout_activity_follower.xml.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\layout\\activity_follower.xml"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/layout_layout_notifications.xml.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/layout/layout_notifications.xml"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/mipmap-anydpi-v26/ic_launcher_round.xml"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\drawable_ic_cmt.png.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\drawable\\ic_cmt.png"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/drawable_baseline_notifications_none_24.xml.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/drawable/baseline_notifications_none_24.xml"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\xml\\backup_rules.xml"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/drawable_baseline_disabled_visible_24.xml.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/drawable/baseline_disabled_visible_24.xml"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\layout_fragment_stats.xml.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\layout\\fragment_stats.xml"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/menu_menu_bottom_navigation.xml.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/menu/menu_bottom_navigation.xml"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\mipmap-xhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/drawable_ic_notifications_black_24dp.xml.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/drawable/ic_notifications_black_24dp.xml"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\layout_login_activity.xml.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\layout\\login_activity.xml"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/mipmap-xxhdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\drawable_baseline_check_circle_24.xml.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\drawable\\baseline_check_circle_24.xml"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/mipmap-xhdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\drawable_ic_flickrpro.png.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\drawable\\ic_flickrpro.png"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/layout_search_view.xml.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/layout/search_view.xml"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\drawable_people.xml.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\drawable\\people.xml"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/drawable_baseline_check_circle_24.xml.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/drawable/baseline_check_circle_24.xml"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\menu_menu.xml.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\menu\\menu.xml"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/drawable_logo.png.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/drawable/logo.png"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\layout_sign_up_activity.xml.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\layout\\sign_up_activity.xml"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/drawable_ic_dashboard_black_24dp.xml.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/drawable/ic_dashboard_black_24dp.xml"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\menu_menu_bottom_navigation.xml.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\menu\\menu_bottom_navigation.xml"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/navigation_mobile_navigation2.xml.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/navigation/mobile_navigation2.xml"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\layout_activity_sign_up.xml.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\layout\\activity_sign_up.xml"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/drawable_ic_flickrpro.png.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/drawable/ic_flickrpro.png"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\mipmap-mdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/layout_slide_item.xml.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/layout/slide_item.xml"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\drawable_circle_background.xml.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\drawable\\circle_background.xml"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/drawable_ic_launcher_background.xml.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/drawable/ic_launcher_background.xml"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\mipmap-xxhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/mipmap-hdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\layout_layout_history.xml.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\layout\\layout_history.xml"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/mipmap-xhdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\drawable_anhflickr1.jpg.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\drawable\\anhflickr1.jpg"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/drawable_border.xml.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/drawable/border.xml"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\drawable_baseline_disabled_visible_24.xml.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\drawable\\baseline_disabled_visible_24.xml"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/xml_data_extraction_rules.xml.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/xml/data_extraction_rules.xml"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\drawable_baseline_format_align_left_24.xml.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\drawable\\baseline_format_align_left_24.xml"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/layout_fragment_stats.xml.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/layout/fragment_stats.xml"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\drawable_ic_search_black_24dp.xml.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\drawable\\ic_search_black_24dp.xml"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/drawable_bg.jpg.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/drawable/bg.jpg"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\drawable_baseline_notifications_none_24.xml.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\drawable\\baseline_notifications_none_24.xml"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/drawable_baseline_search_24.xml.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/drawable/baseline_search_24.xml"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\layout_layout_list_item.xml.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\layout\\layout_list_item.xml"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/layout_dialog_input.xml.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/layout/dialog_input.xml"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\layout_activity_news.xml.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\layout\\activity_news.xml"
     },
     {
-        "merged": "vn.edu.usth.flickrapp-merged_res-51:/layout_layout_image_profile.xml.flat",
-        "source": "vn.edu.usth.flickrapp-main-53:/layout/layout_image_profile.xml"
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\drawable_ic_liked.png.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\drawable\\ic_liked.png"
+    },
+    {
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\layout_fragment_albums.xml.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\layout\\fragment_albums.xml"
+    },
+    {
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\drawable_shape.xml.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\drawable\\shape.xml"
+    },
+    {
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\drawable_baseline_clear_24.xml.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\drawable\\baseline_clear_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\drawable_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\drawable\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\drawable_ic_notifications_black_24dp.xml.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\drawable\\ic_notifications_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-merged_res-51:\\drawable_ic_option.png.flat",
+        "source": "C:\\Users\\KhoaNM\\.gradle\\daemon\\8.0\\vn.edu.usth.flickrapp-main-53:\\drawable\\ic_option.png"
     }
 ]
