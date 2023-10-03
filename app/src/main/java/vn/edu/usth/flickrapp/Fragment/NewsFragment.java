@@ -49,13 +49,12 @@ public class NewsFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
         lstImage = new ArrayList<>();
-        imageAdapter = new ImageAdapter(getContext(), lstImage, user);
-        recyclerView.setAdapter(imageAdapter);
         getNewsImage();
 
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
+                lstImage = new ArrayList<>();
                 getNewsImage();
                 swipeRefreshLayout.setRefreshing(false);
             }
@@ -95,26 +94,11 @@ public class NewsFragment extends Fragment {
                     String commentCount = getValue("commentCount", snapshot);
                     String content = getValue("content", snapshot);
                     String type = getValue("type", snapshot);
-
-                    FirebaseDatabase database = FirebaseDatabase.getInstance();
-                    DatabaseReference usersRef = database.getReference("users");
-                    usersRef.orderByChild("email").equalTo(email).addValueEventListener(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(DataSnapshot dataSnapshot) {
-                            for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                                String firstName = getValue("firstName", snapshot);
-                                String lastName = getValue("lastName", snapshot);
-                                Image item = new Image(email, uri, likeCount, commentCount, content, firstName + " " + lastName, "", type);
-                                if(type.equals("Public")) lstImage.add(item);
-                            }
-                            imageAdapter.notifyDataSetChanged();
-                        }
-
-                        @Override
-                        public void onCancelled(DatabaseError databaseError) {
-                        }
-                    });
+                    Image item = new Image(email, uri, likeCount, commentCount, content, "", "", type);
+                    if(type.equals("Public")) lstImage.add(item);
                 }
+                imageAdapter = new ImageAdapter(getContext(), lstImage, user);
+                recyclerView.setAdapter(imageAdapter);
             }
 
             @Override

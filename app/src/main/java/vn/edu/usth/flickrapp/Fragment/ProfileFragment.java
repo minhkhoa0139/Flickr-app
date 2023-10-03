@@ -210,7 +210,7 @@ public class ProfileFragment extends Fragment {
 
                                 String userKey = user.email.replace(".", ",");
                                 DatabaseReference userRef = usersRef.child(userKey);
-
+                                user.avatar = imageUrl;
                                 userRef.child("avatar").setValue(imageUrl);
                                 progressDialog.dismiss();
                             }

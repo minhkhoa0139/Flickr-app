@@ -99,11 +99,15 @@ public class SignUpActivity extends AppCompatActivity {
                 TextView errorMessageBirthday = findViewById(R.id.errorMessageBirthday);
                 TextView errorMessageEmail = findViewById(R.id.errorMessageEmail);
                 TextView errorMessagePassword = findViewById(R.id.errorMessagePass);
+                TextView errorMessagePassword1 = findViewById(R.id.errorMessagePass1);
+                TextView errorMessagePassword2 = findViewById(R.id.errorMessagePass2);
+                Boolean isValid = true;
+
                 if(TextUtils.isEmpty(firstName))
                 {
                     errorMessageFirstName.setVisibility(View.VISIBLE);
                     errorMessageFirstName.setTextColor(Color.RED);
-                    return;
+                    isValid = false;
                 }
                 else errorMessageFirstName.setVisibility(View.GONE);
 
@@ -111,7 +115,7 @@ public class SignUpActivity extends AppCompatActivity {
                 {
                     errorMessageLastName.setVisibility(View.VISIBLE);
                     errorMessageLastName.setTextColor(Color.RED);
-                    return;
+                    isValid = false;
                 }
                 else errorMessageLastName.setVisibility(View.GONE);
 
@@ -119,7 +123,7 @@ public class SignUpActivity extends AppCompatActivity {
                 {
                     errorMessageBirthday.setVisibility(View.VISIBLE);
                     errorMessageBirthday.setTextColor(Color.RED);
-                    return;
+                    isValid = false;
                 }
                 else errorMessageBirthday.setVisibility(View.GONE);
 
@@ -127,7 +131,7 @@ public class SignUpActivity extends AppCompatActivity {
                 {
                     errorMessageEmail.setVisibility(View.VISIBLE);
                     errorMessageEmail.setTextColor(Color.RED);
-                    return;
+                    isValid = false;
                 }
                 else errorMessageEmail.setVisibility(View.GONE);
 
@@ -135,63 +139,81 @@ public class SignUpActivity extends AppCompatActivity {
                 {
                     errorMessagePassword.setVisibility(View.VISIBLE);
                     errorMessagePassword.setTextColor(Color.RED);
-                    return;
+                    isValid = false;
                 }
                 else errorMessagePassword.setVisibility(View.GONE);
 
-                usersRef.orderByChild("email").equalTo(email).addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
-                        progressDialog.show();
-                        if (dataSnapshot.exists()) {
+//                if(password.length() < 12)
+//                {
+//                    errorMessagePassword1.setVisibility(View.VISIBLE);
+//                    errorMessagePassword1.setTextColor(Color.RED);
+//                    isValid = false;
+//                }
+//                else errorMessagePassword1.setVisibility(View.GONE);
+
+                if(password.contains(" "))
+                {
+                    errorMessagePassword2.setVisibility(View.VISIBLE);
+                    errorMessagePassword2.setTextColor(Color.RED);
+                    isValid = false;
+                }
+                else errorMessagePassword2.setVisibility(View.GONE);
+
+                if(isValid){
+                    usersRef.orderByChild("email").equalTo(email).addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            progressDialog.show();
+                            if (dataSnapshot.exists()) {
+                                progressDialog.dismiss();
+                                Toast.makeText(getApplicationContext(), "Email đã tồn tại", Toast.LENGTH_SHORT).show();
+                            }
+                            else {
+                                usersRef.child(email.replace(".", ",")).setValue(user)
+                                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                            @Override
+                                            public void onSuccess(Void aVoid) {
+                                                progressDialog.dismiss();
+                                                Toast.makeText(getApplicationContext(), "Đăng ký thành công", Toast.LENGTH_SHORT).show();
+
+                                                AlertDialog.Builder builder = new AlertDialog.Builder(SignUpActivity.this);
+                                                builder.setTitle("Xác nhận");
+                                                builder.setMessage("Bạn có muốn chuyển sang trang đăng nhập không?");
+
+                                                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                                                    @Override
+                                                    public void onClick(DialogInterface dialog, int which) {
+                                                        startActivity(new Intent(SignUpActivity.this , LoginActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP));
+                                                    }
+                                                });
+
+                                                builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                                                    @Override
+                                                    public void onClick(DialogInterface dialog, int which) {
+                                                    }
+                                                });
+
+                                                AlertDialog dialog = builder.create();
+                                                dialog.show();
+                                            }
+                                        })
+                                        .addOnFailureListener(new OnFailureListener() {
+                                            @Override
+                                            public void onFailure(@NonNull Exception e) {
+                                                progressDialog.dismiss();
+                                                Toast.makeText(getApplicationContext(), "Đăng ký thất bại", Toast.LENGTH_SHORT).show();
+                                            }
+                                        });
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
                             progressDialog.dismiss();
-                            Toast.makeText(getApplicationContext(), "Email đã tồn tại", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "Lỗi kiểm tra email", Toast.LENGTH_SHORT).show();
                         }
-                        else {
-                            usersRef.child(email.replace(".", ",")).setValue(user)
-                                    .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                        @Override
-                                        public void onSuccess(Void aVoid) {
-                                            progressDialog.dismiss();
-                                            Toast.makeText(getApplicationContext(), "Đăng ký thành công", Toast.LENGTH_SHORT).show();
-
-                                            AlertDialog.Builder builder = new AlertDialog.Builder(SignUpActivity.this);
-                                            builder.setTitle("Xác nhận");
-                                            builder.setMessage("Bạn có muốn chuyển sang trang đăng nhập không?");
-
-                                            builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                                                @Override
-                                                public void onClick(DialogInterface dialog, int which) {
-                                                    startActivity(new Intent(SignUpActivity.this , LoginActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP));
-                                                }
-                                            });
-
-                                            builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
-                                                @Override
-                                                public void onClick(DialogInterface dialog, int which) {
-                                                }
-                                            });
-
-                                            AlertDialog dialog = builder.create();
-                                            dialog.show();
-                                        }
-                                    })
-                                    .addOnFailureListener(new OnFailureListener() {
-                                        @Override
-                                        public void onFailure(@NonNull Exception e) {
-                                            progressDialog.dismiss();
-                                            Toast.makeText(getApplicationContext(), "Đăng ký thất bại", Toast.LENGTH_SHORT).show();
-                                        }
-                                    });
-                        }
-                    }
-
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
-                        progressDialog.dismiss();
-                        Toast.makeText(getApplicationContext(), "Lỗi kiểm tra email", Toast.LENGTH_SHORT).show();
-                    }
-                });
+                    });
+                }
             }
         });
     }

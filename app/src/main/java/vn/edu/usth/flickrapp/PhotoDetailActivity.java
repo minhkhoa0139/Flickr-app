@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -22,6 +23,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.sql.Timestamp;
@@ -32,15 +34,16 @@ import vn.edu.usth.flickrapp.Adapter.CommentAdapter;
 import vn.edu.usth.flickrapp.Model.Comment;
 import vn.edu.usth.flickrapp.Model.Image;
 import vn.edu.usth.flickrapp.Model.Notification;
+import vn.edu.usth.flickrapp.Model.Reaction;
 import vn.edu.usth.flickrapp.Model.User;
 
 public class PhotoDetailActivity extends AppCompatActivity {
     private Image image;
     private User user;
     ImageView imageView;
-    ImageView likeImageViewDetail;
+    ImageView likeImageViewDetail, commentImageViewDetail;
     EditText commentEditText;
-    TextView likeCountTextView, commentCountTextView;
+    TextView likeCountDetailTextView, commentCountDetailTextView;
     Button sendButton;
     Boolean isLiked = false;
     List<Comment> commentList;
@@ -55,18 +58,55 @@ public class PhotoDetailActivity extends AppCompatActivity {
 
         imageView = findViewById(R.id.imageViewDetail);
         commentEditText = findViewById(R.id.commentEditText);
-        likeCountTextView = findViewById(R.id.likeCountDetailTextView);
-        commentCountTextView = findViewById(R.id.commentCountDetailTextView);
+        likeCountDetailTextView = findViewById(R.id.likeCountDetailTextView);
+        commentCountDetailTextView = findViewById(R.id.commentCountDetailTextView);
         likeImageViewDetail = findViewById(R.id.likeImageViewDetail);
+        commentImageViewDetail = findViewById(R.id.commentImageViewDetail);
 
         Glide.with(this).load(image.getUri()).into(imageView);
-        likeCountTextView.setText(image.getLikeCount());
-        commentCountTextView.setText(image.getCommentCount());
+        likeCountDetailTextView.setText(image.getLikeCount());
+        commentCountDetailTextView.setText(image.getCommentCount());
         reloadComment();
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference reactionRef = database.getReference("reaction");
         DatabaseReference commentRef = database.getReference("comment");
+        DatabaseReference notificationRef = database.getReference("notification");
+
+        likeImageViewDetail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!isLiked) {
+                    likeImageViewDetail.setImageResource(R.drawable.ic_liked);
+                    int likeCount = Integer.parseInt(likeCountDetailTextView.getText().toString());
+                    likeCount++;
+                    likeCountDetailTextView.setText(String.valueOf(likeCount));
+                    isLiked = true;
+
+                    Notification item = new Notification("Đã like ảnh của bạn", image.getEmail(), user.email, image.getUri());
+                    notificationRef.push().setValue(item);
+
+                    Reaction reaction = new Reaction(image.getUri(), "liked", user.email);
+                    SaveReaction(reaction);
+                } else {
+                    likeImageViewDetail.setImageResource(R.drawable.ic_like);
+                    int likeCount = Integer.parseInt(likeCountDetailTextView.getText().toString());
+                    likeCount--;
+                    likeCountDetailTextView.setText(String.valueOf(likeCount));
+                    isLiked = false;
+
+                    Reaction reaction = new Reaction(image.getUri(), "unliked", user.email);
+                    SaveReaction(reaction);
+                }
+            }
+        });
+
+        commentImageViewDetail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                commentEditText.requestFocus();
+            }
+        });
 
         reactionRef.orderByChild("uri").equalTo(image.getUri()).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -75,13 +115,13 @@ public class PhotoDetailActivity extends AppCompatActivity {
                 for (DataSnapshot userSnapshot : dataSnapshot.getChildren()) {
                     String email = userSnapshot.child("email").getValue(String.class);
                     String txt_liked = userSnapshot.child("liked").getValue(String.class);
-                    if (email != null && email.equals(user.email)) {
-                        if(txt_liked == null || txt_liked.equals("1")) isLiked = true;
+                    if(txt_liked != null && txt_liked.equals("liked")) {
+                        count = count + 1;
+                        if (email != null && email.equals(user.email)) isLiked = true;
                     }
-                    if(txt_liked == null || txt_liked.equals("1")) count++;
                 }
 
-                likeCountTextView.setText(String.valueOf(count));
+                likeCountDetailTextView.setText(String.valueOf(count));
                 if(isLiked) Glide.with(getBaseContext()).load(R.drawable.ic_liked).into(likeImageViewDetail);
                 else Glide.with(getBaseContext()).load(R.drawable.ic_like).into(likeImageViewDetail);
             }
@@ -96,7 +136,7 @@ public class PhotoDetailActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 long count = dataSnapshot.getChildrenCount();
-                commentCountTextView.setText(String.valueOf(count));
+                commentCountDetailTextView.setText(String.valueOf(count));
             }
 
             @Override
@@ -125,7 +165,7 @@ public class PhotoDetailActivity extends AppCompatActivity {
                                 commentEditText.setText("");
                                 FirebaseDatabase database = FirebaseDatabase.getInstance();
                                 DatabaseReference notificationRef = database.getReference("notification");
-                                Notification item = new Notification(R.drawable.ic_ava, R.drawable.ic_liked, "Đã comment ảnh của bạn", user.email, image.getEmail(), image.getUri());
+                                Notification item = new Notification("Đã comment ảnh của bạn", image.getEmail(), user.email, image.getUri());
                                 notificationRef.push().setValue(item);
                             }
                             else
@@ -138,7 +178,7 @@ public class PhotoDetailActivity extends AppCompatActivity {
             }
         });
 
-        if(focus == "1") commentEditText.requestFocus();
+        if(focus != null && focus.equals("1")) commentEditText.requestFocus();
     }
 
     public void reloadComment()
@@ -189,5 +229,37 @@ public class PhotoDetailActivity extends AppCompatActivity {
     public String getValue(String path, DataSnapshot userSnapshot)
     {
         return userSnapshot.child(path).getValue(String.class);
+    }
+
+    public void SaveReaction(Reaction reaction) {
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference reactionRef = database.getReference("reaction");
+        Query query = reactionRef.orderByChild("email").equalTo(reaction.getEmail());
+
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String userKey = "";
+                for (DataSnapshot userSnapshot : dataSnapshot.getChildren()) {
+                    String uri = userSnapshot.child("uri").getValue(String.class);
+                    if (uri != null && uri.equals(reaction.getUri())) {
+                        userKey = userSnapshot.getKey();
+                        break;
+                    }
+                }
+
+                DatabaseReference userRef;
+                if (TextUtils.isEmpty(userKey)) userRef = reactionRef.push();
+                else userRef = reactionRef.child(userKey);
+                userRef.child("email").setValue(reaction.getEmail());
+                userRef.child("liked").setValue(reaction.GetLiked());
+                userRef.child("uri").setValue(reaction.getUri());
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                // Xử lý lỗi nếu có
+            }
+        });
     }
 }

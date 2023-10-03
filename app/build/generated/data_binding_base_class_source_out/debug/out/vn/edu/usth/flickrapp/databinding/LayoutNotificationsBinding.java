@@ -22,7 +22,7 @@ public final class LayoutNotificationsBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
-  public final RoundedImageView avatarImageView;
+  public final RoundedImageView avatarImageViewNotification;
 
   @NonNull
   public final ConstraintLayout layoutNotification;
@@ -31,16 +31,17 @@ public final class LayoutNotificationsBinding implements ViewBinding {
   public final TextView notificationText;
 
   @NonNull
-  public final ImageView otherImageView;
+  public final ImageView otherImageViewNotification;
 
   private LayoutNotificationsBinding(@NonNull ConstraintLayout rootView,
-      @NonNull RoundedImageView avatarImageView, @NonNull ConstraintLayout layoutNotification,
-      @NonNull TextView notificationText, @NonNull ImageView otherImageView) {
+      @NonNull RoundedImageView avatarImageViewNotification,
+      @NonNull ConstraintLayout layoutNotification, @NonNull TextView notificationText,
+      @NonNull ImageView otherImageViewNotification) {
     this.rootView = rootView;
-    this.avatarImageView = avatarImageView;
+    this.avatarImageViewNotification = avatarImageViewNotification;
     this.layoutNotification = layoutNotification;
     this.notificationText = notificationText;
-    this.otherImageView = otherImageView;
+    this.otherImageViewNotification = otherImageViewNotification;
   }
 
   @Override
@@ -70,9 +71,9 @@ public final class LayoutNotificationsBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.avatarImageView;
-      RoundedImageView avatarImageView = ViewBindings.findChildViewById(rootView, id);
-      if (avatarImageView == null) {
+      id = R.id.avatarImageViewNotification;
+      RoundedImageView avatarImageViewNotification = ViewBindings.findChildViewById(rootView, id);
+      if (avatarImageViewNotification == null) {
         break missingId;
       }
 
@@ -84,14 +85,15 @@ public final class LayoutNotificationsBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.otherImageView;
-      ImageView otherImageView = ViewBindings.findChildViewById(rootView, id);
-      if (otherImageView == null) {
+      id = R.id.otherImageViewNotification;
+      ImageView otherImageViewNotification = ViewBindings.findChildViewById(rootView, id);
+      if (otherImageViewNotification == null) {
         break missingId;
       }
 
-      return new LayoutNotificationsBinding((ConstraintLayout) rootView, avatarImageView,
-          layoutNotification, notificationText, otherImageView);
+      return new LayoutNotificationsBinding((ConstraintLayout) rootView,
+          avatarImageViewNotification, layoutNotification, notificationText,
+          otherImageViewNotification);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

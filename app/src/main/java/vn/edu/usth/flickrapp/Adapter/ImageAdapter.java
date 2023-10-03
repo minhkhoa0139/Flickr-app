@@ -44,7 +44,6 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
     private Context context;
     private List<Image> imagelst;
     private User user;
-    private Dialog dialog;
 
     public ImageAdapter(Context context, List<Image> imagelst, User user) {
         this.context = context;
@@ -63,8 +62,6 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
     public void onBindViewHolder(@NonNull ImageViewHolder holder, int position) {
         Image obj = imagelst.get(position);
         Glide.with(context).load(obj.getUri()).into(holder.imageView);
-
-        holder.usernameTextViewListItem.setText(obj.getName());
         holder.txtContentNews.setText(obj.getContent());
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -79,9 +76,12 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
             public void onDataChange(@NonNull DataSnapshot userSnapshot) {
                 if (userSnapshot.exists()) {
                     String avatar = getValue("avatar", userSnapshot);
+                    String firstName = getValue("firstName", userSnapshot);
+                    String lastName = getValue("lastName", userSnapshot);
                     if(!TextUtils.isEmpty(avatar)) Glide.with(context).load(avatar).into(holder.avatarImageViewListItem);
+                    holder.usernameTextViewListItem.setText(firstName + " " + lastName);
 
-                    dialog = new Dialog(context);
+                    Dialog dialog = new Dialog(context);
                     dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                     dialog.setContentView(R.layout.activity_follower);
 
@@ -89,7 +89,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
                     TextView txtNameFollow = dialog.findViewById(R.id.txtNameFollow);
 
                     if(!TextUtils.isEmpty(avatar)) Glide.with(context).load(avatar).into(imageAvatarFollow);
-                    txtNameFollow.setText(getValue("firstName", userSnapshot) + " " + getValue("lastName", userSnapshot));
+                    txtNameFollow.setText(firstName + " " + lastName);
 
                     Button btnClose = dialog.findViewById(R.id.btnClose);
                     Button btnFollow = dialog.findViewById(R.id.btnFollow);
@@ -129,6 +129,10 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
                             if(followed.equals("Follow")){
                                 btnFollow.setText("Unfollow");
                                 Follow follow = new Follow(obj.getEmail(), user.email,"Follow");
+                                FirebaseDatabase database = FirebaseDatabase.getInstance();
+                                DatabaseReference notificationRef = database.getReference("notification");
+                                Notification item = new Notification("Đã follow bạn", obj.getEmail(), user.email, "0");
+                                notificationRef.push().setValue(item);
                                 SaveFollow(follow);
                             }
                             else {
@@ -136,6 +140,13 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
                                 Follow follow = new Follow(obj.getEmail(), user.email,"Unfollow");
                                 SaveFollow(follow);
                             }
+                        }
+                    });
+
+                    holder.avatarImageViewListItem.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            dialog.show();
                         }
                     });
                 }
@@ -146,13 +157,6 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
             }
         });
 
-        holder.avatarImageViewListItem.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog.show();
-            }
-        });
-
         reactionRef.orderByChild("uri").equalTo(obj.getUri()).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -160,10 +164,10 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
                 for (DataSnapshot userSnapshot : dataSnapshot.getChildren()) {
                     String email = userSnapshot.child("email").getValue(String.class);
                     String txt_liked = userSnapshot.child("liked").getValue(String.class);
-                    if (email != null && email.equals(user.email)) {
-                        if(txt_liked == null || txt_liked.equals("1")) holder.isLiked = true;
+                    if(txt_liked != null && txt_liked.equals("liked")) {
+                        count = count + 1;
+                        if (email != null && email.equals(user.email)) holder.isLiked = true;
                     }
-                    if(txt_liked == null || txt_liked.equals("1")) count++;
                 }
 
                 holder.likeCountTextView.setText(String.valueOf(count));
@@ -219,10 +223,10 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
                     holder.likeCountTextView.setText(String.valueOf(likeCount));
                     holder.isLiked = true;
 
-                    Notification item = new Notification(R.drawable.ic_ava, R.drawable.ic_liked, "Đã like ảnh của bạn", obj.getEmail(), user.email, obj.getUri());
+                    Notification item = new Notification("Đã like ảnh của bạn", obj.getEmail(), user.email, obj.getUri());
                     notificationRef.push().setValue(item);
 
-                    Reaction reaction = new Reaction(obj.getUri(), "1", user.email);
+                    Reaction reaction = new Reaction(obj.getUri(), "liked", user.email);
                     SaveReaction(reaction);
                 } else {
                     holder.likeImageView.setImageResource(R.drawable.ic_like);
@@ -231,7 +235,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
                     holder.likeCountTextView.setText(String.valueOf(likeCount));
                     holder.isLiked = false;
 
-                    Reaction reaction = new Reaction(obj.getUri(), "0", user.email);
+                    Reaction reaction = new Reaction(obj.getUri(), "unliked", user.email);
                     SaveReaction(reaction);
                 }
             }
@@ -269,7 +273,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
         TextView txtContentNews;
         TextView likeCountTextView;
         TextView commentCountTextView;
-        private boolean isLiked = false;
+        boolean isLiked = false;
 
         public ImageViewHolder(View itemView) {
             super(itemView);
@@ -302,12 +306,12 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
                     }
                 }
 
-                if (TextUtils.isEmpty(userKey)) {
-                    reactionRef.push().setValue(reaction);
-                } else {
-                    DatabaseReference userRef = reactionRef.child(userKey);
-                    userRef.child("liked").setValue(reaction.GetLiked());
-                }
+                DatabaseReference userRef;
+                if (TextUtils.isEmpty(userKey)) userRef = reactionRef.push();
+                else userRef = reactionRef.child(userKey);
+                userRef.child("email").setValue(reaction.getEmail());
+                userRef.child("liked").setValue(reaction.GetLiked());
+                userRef.child("uri").setValue(reaction.getUri());
             }
 
             @Override

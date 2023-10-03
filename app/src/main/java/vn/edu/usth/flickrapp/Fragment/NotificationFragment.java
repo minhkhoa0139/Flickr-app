@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -45,33 +46,19 @@ public class NotificationFragment extends Fragment {
                 if (dataSnapshot.exists()) {
                     for (DataSnapshot userSnapshot : dataSnapshot.getChildren()) {
                         String uri_noti = getValue("uri", userSnapshot);
-                        FirebaseDatabase database = FirebaseDatabase.getInstance();
-                        DatabaseReference imagesRef = database.getReference("images_url");
-                        imagesRef.orderByChild("uri").equalTo(uri_noti).addValueEventListener(new ValueEventListener() {
-                            @Override
-                            public void onDataChange(DataSnapshot dataSnapshot) {
-                                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                                    String uri = getValue("uri", snapshot);
-                                    String email = getValue("email", snapshot);
-                                    String likeCount = getValue("likeCount", snapshot);
-                                    String commentCount = getValue("commentCount", snapshot);
-                                    String content = getValue("content", snapshot);
-                                    String type = getValue("type", snapshot);
+                        String emailPhu = getValue("emailPhu", userSnapshot);
 
-                                    Image item = new Image(user.email, uri, likeCount, commentCount, content, "", email, type);
-                                    lstImage.add(item);
-                                }
-                                notifications.add(new Notification(R.drawable.ic_ava, R.drawable.ic_like, getValue("content", userSnapshot),"", "", uri_noti));
-                                NotificationAdapter adapter = new NotificationAdapter(notifications, lstImage, user, getContext());
-                                recyclerView.setAdapter(adapter);
-                                if (notifications.size() > 0) {
-                                    recyclerView.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-                                }
-                            }
-                            @Override
-                            public void onCancelled(DatabaseError databaseError) {
-                            }
-                        });
+                        Notification notification = new Notification(getValue("content", userSnapshot), user.email, emailPhu, uri_noti);
+                        notifications.add(notification);
+                        NotificationAdapter adapter = new NotificationAdapter(notifications, lstImage, user, getContext());
+
+                        Image image = new Image(user.email, uri_noti, "0", "", notification.getContent(), "", emailPhu, "type");
+                        lstImage.add(image);
+
+                        recyclerView.setAdapter(adapter);
+                        if (notifications.size() > 0) {
+                            recyclerView.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+                        }
                     }
                 }
             }

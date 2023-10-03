@@ -54,6 +54,7 @@ id ContentImage
 id action_search
 id avatarImageView
 id avatarImageViewListItem
+id avatarImageViewNotification
 id bottom_navigation
 id btnCamera
 id btnChoose
@@ -79,6 +80,8 @@ id errorMessageEmail
 id errorMessageFirstName
 id errorMessageLastName
 id errorMessagePass
+id errorMessagePass1
+id errorMessagePass2
 id icon_image
 id imageAvatar
 id imageAvatarFollow
@@ -109,7 +112,7 @@ id navigation_dashboard
 id navigation_home
 id navigation_notifications
 id notificationText
-id otherImageView
+id otherImageViewNotification
 id recyclerView
 id recyclerViewAlbum
 id recyclerViewHistory

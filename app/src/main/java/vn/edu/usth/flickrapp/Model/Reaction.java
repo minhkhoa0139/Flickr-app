@@ -19,19 +19,19 @@ public class Reaction {
         this.uri = uri;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public String GetLiked() {
         return liked;
     }
 
     public void setLiked(String liked) {
         this.liked = liked;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

@@ -3239,6 +3239,7 @@ id autoCompleteToEnd
 id autoCompleteToStart
 id avatarImageView
 id avatarImageViewListItem
+id avatarImageViewNotification
 id barrier
 id baseline
 id beginOnFirstDraw
@@ -3357,6 +3358,8 @@ id errorMessageEmail
 id errorMessageFirstName
 id errorMessageLastName
 id errorMessagePass
+id errorMessagePass1
+id errorMessagePass2
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
@@ -3536,7 +3539,7 @@ id notification_main_column_container
 id off
 id on
 id onInterceptTouchReturnSwipe
-id otherImageView
+id otherImageViewNotification
 id outline
 id outward
 id overshoot

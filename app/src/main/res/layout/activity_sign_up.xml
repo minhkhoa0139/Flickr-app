@@ -122,6 +122,22 @@
             android:visibility="gone"/>
 
         <TextView
+            android:id="@+id/errorMessagePass1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Password phải từ 12 kí tự"
+            android:textColor="#FF0000"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/errorMessagePass2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Password không được chưa khoảng trắng"
+            android:textColor="#FF0000"
+            android:visibility="gone"/>
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"

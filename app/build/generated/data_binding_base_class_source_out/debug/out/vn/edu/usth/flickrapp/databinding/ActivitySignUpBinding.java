@@ -37,6 +37,12 @@ public final class ActivitySignUpBinding implements ViewBinding {
   public final TextView errorMessagePass;
 
   @NonNull
+  public final TextView errorMessagePass1;
+
+  @NonNull
+  public final TextView errorMessagePass2;
+
+  @NonNull
   public final Button loginButton;
 
   @NonNull
@@ -66,17 +72,20 @@ public final class ActivitySignUpBinding implements ViewBinding {
   private ActivitySignUpBinding(@NonNull RelativeLayout rootView,
       @NonNull TextView errorMessageBirthday, @NonNull TextView errorMessageEmail,
       @NonNull TextView errorMessageFirstName, @NonNull TextView errorMessageLastName,
-      @NonNull TextView errorMessagePass, @NonNull Button loginButton, @NonNull Button signupButton,
-      @NonNull TextInputEditText txtBirthDay, @NonNull TextInputEditText txtEmail,
-      @NonNull TextInputEditText txtFirstName, @NonNull TextInputEditText txtLastName,
-      @NonNull TextInputEditText txtPassword, @NonNull TextView validPass1,
-      @NonNull TextView validPass2) {
+      @NonNull TextView errorMessagePass, @NonNull TextView errorMessagePass1,
+      @NonNull TextView errorMessagePass2, @NonNull Button loginButton,
+      @NonNull Button signupButton, @NonNull TextInputEditText txtBirthDay,
+      @NonNull TextInputEditText txtEmail, @NonNull TextInputEditText txtFirstName,
+      @NonNull TextInputEditText txtLastName, @NonNull TextInputEditText txtPassword,
+      @NonNull TextView validPass1, @NonNull TextView validPass2) {
     this.rootView = rootView;
     this.errorMessageBirthday = errorMessageBirthday;
     this.errorMessageEmail = errorMessageEmail;
     this.errorMessageFirstName = errorMessageFirstName;
     this.errorMessageLastName = errorMessageLastName;
     this.errorMessagePass = errorMessagePass;
+    this.errorMessagePass1 = errorMessagePass1;
+    this.errorMessagePass2 = errorMessagePass2;
     this.loginButton = loginButton;
     this.signupButton = signupButton;
     this.txtBirthDay = txtBirthDay;
@@ -145,6 +154,18 @@ public final class ActivitySignUpBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.errorMessagePass1;
+      TextView errorMessagePass1 = ViewBindings.findChildViewById(rootView, id);
+      if (errorMessagePass1 == null) {
+        break missingId;
+      }
+
+      id = R.id.errorMessagePass2;
+      TextView errorMessagePass2 = ViewBindings.findChildViewById(rootView, id);
+      if (errorMessagePass2 == null) {
+        break missingId;
+      }
+
       id = R.id.login_button;
       Button loginButton = ViewBindings.findChildViewById(rootView, id);
       if (loginButton == null) {
@@ -201,8 +222,8 @@ public final class ActivitySignUpBinding implements ViewBinding {
 
       return new ActivitySignUpBinding((RelativeLayout) rootView, errorMessageBirthday,
           errorMessageEmail, errorMessageFirstName, errorMessageLastName, errorMessagePass,
-          loginButton, signupButton, txtBirthDay, txtEmail, txtFirstName, txtLastName, txtPassword,
-          validPass1, validPass2);
+          errorMessagePass1, errorMessagePass2, loginButton, signupButton, txtBirthDay, txtEmail,
+          txtFirstName, txtLastName, txtPassword, validPass1, validPass2);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
