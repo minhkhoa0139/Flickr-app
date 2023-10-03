@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -70,7 +71,22 @@ public class publicFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_public, container, false);
+        reloadImage(v);
 
+        SwipeRefreshLayout swipeRefreshLayout = v.findViewById(R.id.swipeRefreshLayoutProfile);
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                reloadImage(v);
+                swipeRefreshLayout.setRefreshing(false);
+            }
+        });
+
+        return v;
+    }
+
+    public void reloadImage(View v)
+    {
         RecyclerView recyclerView = v.findViewById(R.id.recyclerViewProfile);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         List<Image> imgLst = new ArrayList<>();
@@ -109,12 +125,9 @@ public class publicFragment extends Fragment {
             public void onCancelled(DatabaseError databaseError) {
             }
         });
-
-        return v;
     }
 
-    public String getValue(String path, DataSnapshot userSnapshot)
-    {
+    public String getValue(String path, DataSnapshot userSnapshot) {
         return userSnapshot.child(path).getValue(String.class);
     }
 }

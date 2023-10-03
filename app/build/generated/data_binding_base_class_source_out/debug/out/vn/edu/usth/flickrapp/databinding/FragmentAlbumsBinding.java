@@ -8,6 +8,7 @@ import android.widget.FrameLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import java.lang.NullPointerException;
@@ -22,10 +23,15 @@ public final class FragmentAlbumsBinding implements ViewBinding {
   @NonNull
   public final RecyclerView recyclerViewAlbum;
 
+  @NonNull
+  public final SwipeRefreshLayout swipeRefreshLayoutAlbum;
+
   private FragmentAlbumsBinding(@NonNull FrameLayout rootView,
-      @NonNull RecyclerView recyclerViewAlbum) {
+      @NonNull RecyclerView recyclerViewAlbum,
+      @NonNull SwipeRefreshLayout swipeRefreshLayoutAlbum) {
     this.rootView = rootView;
     this.recyclerViewAlbum = recyclerViewAlbum;
+    this.swipeRefreshLayoutAlbum = swipeRefreshLayoutAlbum;
   }
 
   @Override
@@ -61,7 +67,14 @@ public final class FragmentAlbumsBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentAlbumsBinding((FrameLayout) rootView, recyclerViewAlbum);
+      id = R.id.swipeRefreshLayoutAlbum;
+      SwipeRefreshLayout swipeRefreshLayoutAlbum = ViewBindings.findChildViewById(rootView, id);
+      if (swipeRefreshLayoutAlbum == null) {
+        break missingId;
+      }
+
+      return new FragmentAlbumsBinding((FrameLayout) rootView, recyclerViewAlbum,
+          swipeRefreshLayoutAlbum);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

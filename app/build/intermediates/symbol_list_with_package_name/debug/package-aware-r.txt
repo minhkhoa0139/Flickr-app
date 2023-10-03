@@ -3660,6 +3660,8 @@ id submenuarrow
 id submit_area
 id supportScrollUp
 id swipeRefreshLayout
+id swipeRefreshLayoutAlbum
+id swipeRefreshLayoutProfile
 id tabMode
 id tab_layout
 id tag_accessibility_actions

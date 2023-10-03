@@ -12,6 +12,7 @@ import android.widget.Toast;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.bumptech.glide.Glide;
 import com.google.firebase.database.DataSnapshot;
@@ -82,7 +83,21 @@ public class AlbumsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_albums, container, false);
+        reloadImage(v);
 
+        SwipeRefreshLayout swipeRefreshLayout = v.findViewById(R.id.swipeRefreshLayoutAlbum);
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                reloadImage(v);
+                swipeRefreshLayout.setRefreshing(false);
+            }
+        });
+
+        return v;
+    }
+
+    public void reloadImage(View v){
         RecyclerView recyclerView = v.findViewById(R.id.recyclerViewAlbum);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         List<Image> imgLst = new ArrayList<>();
@@ -91,7 +106,7 @@ public class AlbumsFragment extends Fragment {
         DatabaseReference imagesRef = database.getReference("images_url");
         DatabaseReference reactionRef = database.getReference("reaction");
 
-        imagesRef.orderByChild("email").equalTo(user.email).addListenerForSingleValueEvent(new ValueEventListener() {
+        imagesRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
@@ -108,8 +123,9 @@ public class AlbumsFragment extends Fragment {
                             public void onDataChange(DataSnapshot dataSnapshot) {
                                 for (DataSnapshot userSnapshot : dataSnapshot.getChildren()) {
                                     String email = userSnapshot.child("email").getValue(String.class);
-                                    if (email != null && email.equals(user.email)) {
-                                        imgLst.add(new Image(user.email, uri, likeCount, commentCount, content, "", email, type));
+                                    String liked = userSnapshot.child("liked").getValue(String.class);
+                                    if (email != null && email.equals(user.email) && liked.equals("liked")) {
+                                        imgLst.add(new Image(email, uri, likeCount, commentCount, content, "", "", type));
                                         ImageProfileAdapter adapter = new ImageProfileAdapter(getContext(), imgLst, user);
                                         recyclerView.setAdapter(adapter);
                                     }
@@ -129,8 +145,6 @@ public class AlbumsFragment extends Fragment {
             public void onCancelled(DatabaseError databaseError) {
             }
         });
-
-        return v;
     }
 
     public String getValue(String path, DataSnapshot userSnapshot)

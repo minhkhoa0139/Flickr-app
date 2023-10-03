@@ -123,6 +123,8 @@ id register
 id sendButton
 id signup_button
 id swipeRefreshLayout
+id swipeRefreshLayoutAlbum
+id swipeRefreshLayoutProfile
 id tab_layout
 id textInputLayout
 id textNameProfile

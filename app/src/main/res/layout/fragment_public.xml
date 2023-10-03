@@ -8,31 +8,37 @@
     android:gravity="center"
     android:orientation="vertical">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewProfile"
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayoutProfile"
         android:layout_width="match_parent"
-        android:layout_height="0dp"/>
+        android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="221dp"
-        android:layout_height="218dp"
-        android:src="@drawable/ic_camera" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewProfile"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Share your snaps"
-        android:id="@+id/txtProfile1"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="221dp"
+            android:layout_height="218dp"
+            android:src="@drawable/ic_camera" />
 
-    <TextView
-        android:textAlignment="center"
-        android:textSize="20sp"
-        android:id="@+id/txtProfile2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Take a photo or make photos public from the Camera Roll." />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Share your snaps"
+            android:id="@+id/txtProfile1"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
+        <TextView
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:id="@+id/txtProfile2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Take a photo or make photos public from the Camera Roll." />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 </LinearLayout>
